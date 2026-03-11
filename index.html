@@ -210,6 +210,12 @@
     #mobile-menu { display: none; }
     #mobile-menu.open { display: flex; }
   </style>
+  <!-- Vercel Analytics -->
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Vercel Speed Insights -->
+  <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body class="overflow-x-hidden">
 
@@ -1151,6 +1157,40 @@
       const target = document.querySelector(href);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+
+  // ── Vercel Analytics custom events ───────────────────────────────────────
+  function track(name, data) {
+    if (typeof window.va === 'function') window.va('event', { name, ...(data || {}) });
+  }
+
+  // CTA clicks — all anchors pointing to #contact
+  document.querySelectorAll('a[href="#contact"]').forEach(a => {
+    a.addEventListener('click', () => track('cta_click'));
+  });
+
+  // Phone click
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => track('phone_click'));
+  });
+
+  // Form start — fires once when user first clicks into the GHL iframe
+  let formStartFired = false;
+  const formIframe = document.getElementById('inline-VenHYQiYId7d7z9hgwQy');
+  if (formIframe) {
+    window.addEventListener('blur', () => {
+      if (!formStartFired && document.activeElement === formIframe) {
+        formStartFired = true;
+        track('form_start');
+      }
+    });
+  }
+
+  // Form submit — GHL fires a postMessage on successful submission
+  window.addEventListener('message', (e) => {
+    if (e.data && (e.data.event === 'form_submitted' || e.data.type === 'form_submitted')) {
+      track('form_submit');
+    }
   });
 </script>
 </body>
