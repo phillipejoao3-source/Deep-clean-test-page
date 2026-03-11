@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maid Ready Cleaning — Deep Clean + 2 Free Maintenance Cleans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#F4F9FF',
+              100: '#EAF2FF',
+              200: '#FFD580',
+              300: '#FFB830',
+              400: '#FFB830',
+              500: '#FFB830',
+              600: '#e6a428',
+              700: '#102E3D',
+              800: '#0b2230',
+              900: '#071922',
+              vivid: '#FF5E2D',
+            },
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            ui: ['Outfit', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fafaf9;
+      color: #1c1917;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    h1, h2 { letter-spacing: -0.01em; }
+    h1 { font-weight: 700; }
+    h2 { font-weight: 600; }
+
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #FFB830; color: #102E3D;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.01em; padding: 1rem 2.25rem;
+      border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 8px 24px -4px rgba(255,184,48,0.45), 0 2px 6px -1px rgba(0,0,0,0.14);
+      transition: transform 220ms cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 220ms cubic-bezier(0.34,1.56,0.64,1),
+                  background 180ms ease, color 180ms ease;
+    }
+    .btn-primary:hover {
+      background: #102E3D; color: #FFB830;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -6px rgba(0,0,0,0.38), 0 4px 10px -2px rgba(0,0,0,0.18);
+    }
+    .btn-primary:focus-visible { outline: 2px solid #FFB830; outline-offset: 3px; }
+    .btn-primary:active { transform: translateY(0); box-shadow: 0 4px 12px -2px rgba(255,184,48,0.30); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: #ffffff;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 1rem 2.25rem; border-radius: 100px;
+      border: 2px solid rgba(255,255,255,0.55); cursor: pointer;
+      transition: transform 220ms cubic-bezier(0.34,1.56,0.64,1),
+                  background 180ms ease, border-color 180ms ease;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.12); border-color: white;
+      transform: translateY(-2px);
+    }
+    .btn-ghost:focus-visible { outline: 2px solid #FFB830; outline-offset: 3px; }
+    .btn-ghost:active { transform: translateY(0); }
+
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #102E3D; color: #FFB830;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+      padding: 1rem 2.25rem; border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 8px 24px -4px rgba(0,0,0,0.40);
+      transition: transform 220ms cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 220ms cubic-bezier(0.34,1.56,0.64,1),
+                  background 180ms ease;
+    }
+    .btn-dark:hover {
+      background: #FFB830; color: #102E3D;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -6px rgba(255,184,48,0.45);
+    }
+    .btn-dark:focus-visible { outline: 2px solid #FFB830; outline-offset: 3px; }
+    .btn-dark:active { transform: translateY(0); }
+
+    /* Nav link */
+    .nav-link {
+      position: relative; color: rgba(255,255,255,0.75); font-weight: 500;
+      font-size: 0.875rem; letter-spacing: 0.01em;
+      transition: color 200ms ease;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 2px; background: #FFB830; border-radius: 2px;
+      transition: width 250ms cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-link:hover { color: #FFD580; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:focus-visible { outline: 2px solid #FFB830; outline-offset: 4px; border-radius: 3px; }
+
+    /* Cards */
+    .card {
+      background: white; border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 2px 4px -1px rgba(0,0,0,0.04), 0 8px 24px -4px rgba(0,0,0,0.06);
+    }
+    .card-hover {
+      transition: transform 280ms cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 280ms cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px -4px rgba(255,184,48,0.22), 0 2px 8px -1px rgba(0,0,0,0.06);
+    }
+
+    /* Check mark */
+    .check { color: #FFB830; font-weight: 700; flex-shrink: 0; }
+
+    /* Stars */
+    .stars { color: #FFB830; letter-spacing: 0.05em; }
+
+    /* Form input */
+    .form-input {
+      width: 100%; padding: 0.875rem 1.1rem;
+      border: 1.5px solid #d6d3d1; border-radius: 12px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      color: #1c1917; background: white; outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+    .form-input:focus { border-color: #FFB830; box-shadow: 0 0 0 3px rgba(255,184,48,0.18); }
+    .form-input::placeholder { color: #a8a29e; }
+    select.form-input { appearance: none; cursor: pointer; }
+
+    /* Scroll fade-in */
+    .fade-up {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 550ms ease, transform 550ms cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Floating */
+    .float { animation: float 3.8s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+    /* Urgency pulse */
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; }
+    @keyframes pulseDot {
+      0%,100%{box-shadow:0 0 0 0 rgba(255,184,48,0.5)}
+      50%{box-shadow:0 0 0 6px rgba(255,184,48,0)}
+    }
+
+    /* Value badge strikethrough */
+    .value-price {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.5rem; font-weight: 900;
+      color: #a8a29e;
+      text-decoration: line-through;
+      text-decoration-color: rgba(168,162,158,0.6);
+    }
+
+    /* Guarantee seal */
+    .seal {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: conic-gradient(from 0deg, #FFB830 0%, #FFD580 25%, #FFB830 50%, #FFD580 75%, #FFB830 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px -6px rgba(255,184,48,0.55), 0 2px 8px -2px rgba(0,0,0,0.10);
+      flex-shrink: 0;
+    }
+
+    /* Explicit font-class overrides (ensures Tailwind CDN custom config is applied) */
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif !important; }
+    .font-serif   { font-family: 'Cormorant Garamond', Georgia, serif !important; }
+    .font-body    { font-family: 'DM Sans', system-ui, sans-serif !important; }
+    .font-ui      { font-family: 'Outfit', system-ui, sans-serif !important; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 left-0 right-0 z-50"
+     style="background:#060F1A; border-bottom:1px solid rgba(255,255,255,0.07); box-shadow: 0 2px 24px -2px rgba(0,0,0,0.55);">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+      <img src="LOGO.png" alt="Maid Ready Cleaning"
+           class="h-10 w-auto rounded-lg object-contain"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="hidden items-center justify-center h-10 w-10 rounded-xl font-display font-bold text-lg text-stone-900" style="background:#FFB830;">M</div>
+      <span class="font-display font-black text-[1.1rem] text-white tracking-tight" style="font-family:'Outfit',system-ui,sans-serif;">Maid Ready <span style="color:#FFB830;">Cleaning</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#problem" class="nav-link">Why Us</a>
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#testimonials" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15555555555" class="hidden sm:flex items-center gap-2 font-semibold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded" style="color:rgba(255,255,255,0.75); transition: color 200ms ease;" onmouseover="this.style.color='#FFD580'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        (555) 123-4567
+      </a>
+      <a href="#contact" class="btn-primary text-sm" style="padding:0.65rem 1.4rem;">Claim Free Cleans</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden grain">
+  <img src="Gemini_Generated_Image_cx3y2ycx3y2ycx3y-transformed.png" alt="" aria-hidden="true"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;" />
+  <div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.62) 100%);z-index:1;"></div>
+  <div class="absolute inset-0" style="background:radial-gradient(ellipse 55% 45% at 25% 55%, rgba(255,184,48,0.13) 0%, transparent 65%);z-index:1;"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-6 py-28 text-center w-full fade-up">
+    <!-- Offer pill -->
+    <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-8"
+         style="background:rgba(255,184,48,0.18); border:1px solid rgba(255,184,48,0.38); color:#FFD580;">
+      <span class="w-2 h-2 rounded-full bg-brand-400 inline-block pulse-dot"></span>
+      Limited Spots Available This Week
+    </div>
+
+    <h1 class="font-display font-black text-white leading-[1.04] mb-8"
+        style="font-size:clamp(3rem,7vw,5rem);">
+      Still Cleaning On<br/><span style="color:#FFB830; text-decoration:underline; font-style:italic;">YOUR</span> Weekends?
+    </h1>
+
+    <p class="text-stone-300 text-xl leading-[1.75] mb-10 max-w-lg mx-auto">
+      One deep clean can give them back.
+    </p>
+
+    <!-- Glowing offer box / CTA -->
+    <a href="#contact" class="relative inline-block w-full max-w-md mx-auto mb-8 group" style="text-decoration:none;">
+      <!-- Glow layer -->
+      <div class="absolute inset-0 rounded-2xl"
+           style="background:linear-gradient(135deg,#f472b6,#d946ef,#a855f7); filter:blur(22px); opacity:0.65; transform:scale(1.04);
+                  transition: opacity 220ms ease, filter 220ms ease;"></div>
+      <!-- Box -->
+      <div class="relative rounded-2xl px-7 py-4 text-center cursor-pointer"
+           style="background:linear-gradient(135deg,#f472b6 0%,#d946ef 55%,#a855f7 100%);
+                  box-shadow:0 0 0 1px rgba(255,255,255,0.18) inset, 0 8px 32px -4px rgba(168,85,247,0.45);
+                  transition: transform 220ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 220ms ease;">
+        <p style="font-family:'Outfit',sans-serif; font-weight:700; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.90;" class="text-white mb-3">✨ Deep Clean Special</p>
+        <p style="font-family:'Outfit',sans-serif; font-weight:800; font-size:1.35rem; line-height:1.25;" class="text-white">
+          Book a deep clean →<br/>Get <span style="color:#fff176; font-weight:900;">2 FREE</span> maintenance cleans on us
+        </p>
+        <!-- Hover CTA hint -->
+        <p class="text-white text-xs font-semibold mt-2 opacity-0 group-hover:opacity-70"
+           style="transition: opacity 180ms ease; letter-spacing:0.04em;">
+          TAP TO CLAIM →
+        </p>
+      </div>
+    </a>
+
+    <style>
+      .group:hover > div:first-child { opacity: 0.9; filter: blur(28px); }
+      .group:hover > div:last-child { transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(255,255,255,0.25) inset, 0 16px 48px -6px rgba(168,85,247,0.65) !important; }
+      .group:active > div:last-child { transform: translateY(0px); }
+      .group:focus-visible { outline: 2px solid #f472b6; outline-offset: 4px; border-radius: 18px; }
+    </style>
+
+    <!-- Service chips -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-stone-200 cursor-default"
+           style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.18);">
+        🏠 Residential Homes
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-stone-200 cursor-default"
+           style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.18);">
+        🏢 Apartments &amp; Condos
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-stone-200 cursor-default"
+           style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.18);">
+        ✈️ Airbnb / Short-Term
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="#contact" class="btn-primary text-base">
+      Claim My Free Cleans
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Social proof bar -->
+    <div class="flex items-center justify-center gap-6 mt-8 flex-wrap">
+      <div class="flex items-center gap-2">
+        <span style="color:#FFB830; font-size:0.85rem;">★★★★★</span>
+        <span class="text-stone-300 text-xs font-medium">4.9 rating average</span>
+      </div>
+      <div style="width:1px; height:16px; background:rgba(255,255,255,0.18);"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-white text-xs font-bold">500+</span>
+        <span class="text-stone-300 text-xs font-medium">cleans completed</span>
+      </div>
+      <div style="width:1px; height:16px; background:rgba(255,255,255,0.18);"></div>
+      <div class="flex items-center gap-2">
+        <span class="text-white text-xs font-bold">100%</span>
+        <span class="text-stone-300 text-xs font-medium">satisfaction guarantee</span>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="mt-4 text-stone-300 text-xs">* Only available for new customers. Limited spots each week.</p>
+  </div>
+</section>
+
+<!-- ===== REVIEW CAROUSEL ===== -->
+<section style="background:#060F1A; padding:1.25rem 0 0; overflow:hidden; position:relative;">
+  <!-- Label -->
+  <div class="flex items-center justify-center gap-2 mb-4">
+    <span style="color:#FFB830; font-size:0.9rem; letter-spacing:0.05em;">★★★★★</span>
+    <span style="color:rgba(255,255,255,0.35); font-size:0.65rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-family:'Outfit',sans-serif;">Real Google Reviews</span>
+  </div>
+
+  <!-- Marquee wrapper — fade edges -->
+  <div id="rev-marquee-wrap" style="position:relative;">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to right,#060F1A,transparent);pointer-events:none;"></div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to left,#060F1A,transparent);pointer-events:none;"></div>
+
+    <div id="rev-marquee" style="display:flex; gap:0.85rem; width:max-content; will-change:transform; padding-bottom:2.5rem;">
+      <!-- Cards injected by JS (doubled for seamless loop) -->
+    </div>
+  </div>
+  <!-- Bottom fade into next section -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:48px;background:linear-gradient(to bottom,transparent,#0f1c24);pointer-events:none;z-index:3;"></div>
+</section>
+
+<style>
+  @keyframes rev-scroll { from { transform:translateX(0); } to { transform:translateX(var(--rev-offset)); } }
+  #rev-marquee { animation: rev-scroll 32s linear infinite; }
+  #rev-marquee.paused { animation-play-state: paused; }
+  .rev-tile {
+    flex-shrink: 0;
+    width: 260px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    cursor: default;
+    transition: background 200ms ease, border-color 200ms ease;
+  }
+  .rev-tile:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,184,48,0.30); }
+</style>
+
+<script>
+(function() {
+  const reviews = [
+    { initials:'MS', name:'Marie St Jean',       text:'"Phenomenal! Every visit leaves my home absolutely spotless. I\'ve been a customer for almost two years."' },
+    { initials:'SC', name:'Sharon Crumpler',     text:'"They\'ve accommodated my ever-changing schedule for years. I always love coming home to a freshly cleaned house!"' },
+    { initials:'TC', name:'T&W Casper',          text:'"We\'ve used them for our Airbnb properties for years — accommodating, reliable, and always consistent."' },
+    { initials:'GS', name:'Geana Silva',         text:'"This company gave my home a whole new look. I felt such peace when I saw it. Professional and trustworthy."' },
+    { initials:'MR', name:'Maria Eduarda Rossi', text:'"Impeccable service! Responsible, detailed, and highly recommendable."' },
+    { initials:'MF', name:'Mari Faustino',       text:'"Professionalism, punctuality, and quality in every visit. Couldn\'t ask for more."' },
+  ];
+
+  const marquee = document.getElementById('rev-marquee');
+
+  function buildCard(r) {
+    const el = document.createElement('div');
+    el.className = 'rev-tile';
+    el.innerHTML = `
+      <div style="color:#FFB830; font-size:0.8rem; margin-bottom:0.6rem; letter-spacing:0.04em;">★★★★★</div>
+      <p style="color:rgba(255,255,255,0.80); font-size:0.82rem; line-height:1.65; margin-bottom:0.9rem; font-family:'Outfit',sans-serif;">${r.text}</p>
+      <div style="display:flex; align-items:center; gap:0.6rem;">
+        <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,184,48,0.18);border:1px solid rgba(255,184,48,0.35);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:700;color:#FFB830;flex-shrink:0;">${r.initials}</div>
+        <p style="color:rgba(255,255,255,0.55); font-size:0.72rem; font-weight:600; font-family:'Outfit',sans-serif;">${r.name}</p>
+      </div>`;
+    return el;
+  }
+
+  // Double the cards for seamless loop
+  [...reviews, ...reviews].forEach(r => marquee.appendChild(buildCard(r)));
+
+  // Measure half-width and set CSS var for animation target
+  requestAnimationFrame(() => {
+    const half = marquee.scrollWidth / 2;
+    marquee.style.setProperty('--rev-offset', `-${half}px`);
+  });
+
+  // Pause on hover (desktop) and touchstart/touchend (mobile)
+  const wrap = document.getElementById('rev-marquee-wrap');
+  wrap.addEventListener('mouseenter', () => marquee.classList.add('paused'));
+  wrap.addEventListener('mouseleave', () => marquee.classList.remove('paused'));
+  wrap.addEventListener('touchstart', () => marquee.classList.add('paused'), { passive:true });
+  wrap.addEventListener('touchend',   () => marquee.classList.remove('paused'), { passive:true });
+})();
+</script>
+
+<!-- ===== STUDY STAT ===== -->
+<section id="study-stat" class="py-24 relative overflow-hidden grain"
+         style="background:radial-gradient(ellipse 80% 70% at 50% 30%, rgba(217,70,239,0.14) 0%, transparent 60%),
+                          radial-gradient(ellipse 50% 50% at 90% 90%, rgba(255,184,48,0.07) 0%, transparent 50%),
+                          #0f1c24;">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+
+    <div class="fade-up mb-4">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-5 text-[#FFB830]">According to Statistics</p>
+      <h2 class="font-display font-black text-white leading-tight tracking-tight mb-4"
+          style="font-size:clamp(1.8rem,4vw,3rem);">
+        This year, cleaning will take<br/><em id="study-headline-emphasis" style="color:#f472b6;">52 of your Saturday mornings.</em>
+      </h2>
+      <p id="study-subtext" class="text-stone-400 text-base leading-[1.8] max-w-lg mx-auto mb-10">
+        7 hours a week × 52 weeks = <strong class="text-white">364 hours</strong> spent scrubbing, vacuuming, and mopping. That's 15 full days — gone.
+      </p>
+    </div>
+
+    <!-- 52 Saturdays grid -->
+    <div class="fade-up mb-8">
+      <div id="saturdays-grid"
+           style="display:grid; grid-template-columns:repeat(13,1fr); gap:8px; max-width:520px; margin:0 auto;"></div>
+      <p class="text-stone-600 text-xs font-semibold uppercase tracking-widest mt-5">Each square = one Saturday this year</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="fade-up inline-flex rounded-full p-1 mb-8"
+         style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);">
+      <button id="toggle-before" onclick="setStudyMode('before')"
+              class="px-6 py-2.5 rounded-full text-sm font-bold text-white"
+              style="background:linear-gradient(135deg,#f472b6,#d946ef); transition: opacity 200ms ease, background 200ms ease;">
+        Without Maid Ready
+      </button>
+      <button id="toggle-after" onclick="setStudyMode('after')"
+              class="px-6 py-2.5 rounded-full text-sm font-semibold text-stone-400"
+              style="background:transparent; opacity:0.55; transition: opacity 200ms ease, background 200ms ease;">
+        With Maid Ready
+      </button>
+    </div>
+
+    <!-- Bottom callout -->
+    <div id="study-callout" class="fade-up inline-block rounded-2xl px-7 py-4 border"
+         style="background:rgba(217,70,239,0.10); border-color:rgba(217,70,239,0.25);">
+      <p class="font-display font-black text-white text-lg leading-snug">
+        364 hours/year · 15 full days · <span style="color:#f472b6;">52 weekends</span>
+      </p>
+      <p class="text-stone-400 text-sm mt-1">All spent cleaning. What would <em>you</em> do with that time?</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #saturdays-grid { perspective: 600px; }
+  .sat-sq {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .sat-sq-inner {
+    width: 100%; height: 100%;
+    border-radius: 8px;
+    transition: transform 520ms cubic-bezier(0.34,1.2,0.64,1),
+                box-shadow 520ms ease;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .sat-sq-front, .sat-sq-back {
+    position: absolute; inset: 0;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .sat-sq-back { transform: rotateY(180deg); }
+
+  /* Text crossfade */
+  .study-fade {
+    transition: opacity 300ms ease, transform 300ms cubic-bezier(0.22,1,0.36,1);
+  }
+  .study-fade.out {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* Callout border/bg transition */
+  #study-callout {
+    transition: background 400ms ease, border-color 400ms ease;
+  }
+
+  /* Toggle pill */
+  #study-toggle-track button {
+    transition: background 280ms ease, opacity 280ms ease, color 280ms ease;
+  }
+</style>
+<script>
+(function() {
+  const WEEKS = 52;
+  const COLS = 13;
+  let studyMode = 'before';
+  let flipTimers = [];
+
+  const COLORS = {
+    before: { bg: 'linear-gradient(135deg,#f472b6,#a855f7)', shadow: '0 2px 12px 2px rgba(217,70,239,0.55), 0 0 0 1px rgba(255,255,255,0.1) inset' },
+    after:  { bg: 'linear-gradient(135deg,#FFB830,#f59e0b)',  shadow: '0 2px 12px 2px rgba(255,184,48,0.45), 0 0 0 1px rgba(255,255,255,0.15) inset' },
+    idle:   { bg: 'rgba(255,255,255,0.07)', shadow: 'none' }
+  };
+
+  function buildGrid() {
+    const grid = document.getElementById('saturdays-grid');
+    if (!grid || grid.querySelector('.sat-sq')) return;
+    for (let i = 0; i < WEEKS; i++) {
+      const wrap = document.createElement('div');
+      wrap.className = 'sat-sq';
+      const inner = document.createElement('div');
+      inner.className = 'sat-sq-inner';
+      const front = document.createElement('div');
+      front.className = 'sat-sq-front';
+      front.style.background = COLORS.idle.bg;
+      const back = document.createElement('div');
+      back.className = 'sat-sq-back';
+      inner.appendChild(front);
+      inner.appendChild(back);
+      wrap.appendChild(inner);
+      grid.appendChild(wrap);
+    }
+  }
+
+  function flipSquares(toMode, animate) {
+    const squares = document.querySelectorAll('.sat-sq-inner');
+    const isCleaning = toMode === 'before';
+    flipTimers.forEach(clearTimeout);
+    flipTimers = [];
+
+    squares.forEach(function(inner, i) {
+      const row = Math.floor(i / COLS);
+      const col = i % COLS;
+      const diag = row + col;
+      const delay = animate ? diag * 32 : 0;
+
+      const front = inner.querySelector('.sat-sq-front');
+      const back  = inner.querySelector('.sat-sq-back');
+      const c = COLORS[toMode];
+
+      const t = setTimeout(function() {
+        // Halfway through: swap the back face color, then flip
+        back.style.background = c.bg;
+        back.style.boxShadow  = c.shadow;
+        inner.style.transform = 'rotateY(180deg)';
+        inner.style.boxShadow = 'none';
+
+        // After flip completes, swap faces so next flip works correctly
+        const reset = setTimeout(function() {
+          inner.style.transition = 'none';
+          front.style.background = c.bg;
+          front.style.boxShadow  = c.shadow;
+          back.style.background  = COLORS.idle.bg;
+          back.style.boxShadow   = 'none';
+          inner.style.transform  = 'rotateY(0deg)';
+          // Re-enable transition after a tick
+          requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+              inner.style.transition = '';
+            });
+          });
+        }, 540);
+        flipTimers.push(reset);
+      }, delay);
+      flipTimers.push(t);
+    });
+  }
+
+  function fadeSwapText(el, newHTML, newColor) {
+    el.classList.add('out');
+    setTimeout(function() {
+      if (newColor) el.style.color = newColor;
+      if (newHTML !== undefined) el.innerHTML = newHTML;
+      el.classList.remove('out');
+    }, 300);
+  }
+
+  window.setStudyMode = function(m) {
+    if (m === studyMode) return;
+    studyMode = m;
+    const beforeBtn = document.getElementById('toggle-before');
+    const afterBtn  = document.getElementById('toggle-after');
+    const headline  = document.getElementById('study-headline-emphasis');
+    const subtext   = document.getElementById('study-subtext');
+    const callout   = document.getElementById('study-callout');
+
+    if (m === 'before') {
+      beforeBtn.style.background = 'linear-gradient(135deg,#f472b6,#d946ef)';
+      beforeBtn.style.opacity = '1';
+      beforeBtn.style.color = '#fff';
+      afterBtn.style.background = 'transparent';
+      afterBtn.style.opacity = '0.5';
+      callout.style.background = 'rgba(217,70,239,0.10)';
+      callout.style.borderColor = 'rgba(217,70,239,0.25)';
+      fadeSwapText(headline, '52 of your Saturday mornings.', '#f472b6');
+      fadeSwapText(subtext,
+        '7 hours a week × 52 weeks = <strong class="text-white">364 hours</strong> spent scrubbing, vacuuming, and mopping. That\'s 15 full days — gone.',
+        null);
+      fadeSwapText(callout,
+        '<p class="font-display font-black text-white text-lg leading-snug">364 hours/year · 15 full days · <span style="color:#f472b6;">52 weekends</span></p><p class="text-stone-400 text-sm mt-1">All spent cleaning. What would <em>you</em> do with that time?</p>',
+        null);
+    } else {
+      afterBtn.style.background = 'linear-gradient(135deg,#FFB830,#f59e0b)';
+      afterBtn.style.opacity = '1';
+      afterBtn.style.color = '#1a1a1a';
+      beforeBtn.style.background = 'transparent';
+      beforeBtn.style.opacity = '0.5';
+      callout.style.background = 'rgba(255,184,48,0.10)';
+      callout.style.borderColor = 'rgba(255,184,48,0.3)';
+      fadeSwapText(headline, '52 Saturday mornings — back.', '#FFB830');
+      fadeSwapText(subtext,
+        'With Maid Ready, those <strong class="text-white">364 hours</strong> are yours again. Sleep in. Go out. Do literally anything else.',
+        null);
+      fadeSwapText(callout,
+        '<p class="font-display font-black text-white text-lg leading-snug">364 hours/year · <span style="color:#FFB830;">all yours</span></p><p class="text-stone-400 text-sm mt-1">Reclaim your mornings starting this week.</p>',
+        null);
+    }
+    flipSquares(m, true);
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    buildGrid();
+    // Add study-fade class to animated text elements
+    ['study-headline-emphasis','study-subtext','study-callout'].forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('study-fade');
+    });
+
+    const section = document.getElementById('study-stat');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          // Initial entrance: squares pop in from scale 0 with stagger
+          const squares = document.querySelectorAll('.sat-sq-inner .sat-sq-front');
+          squares.forEach(function(front, i) {
+            const row = Math.floor(i / COLS), col = i % COLS;
+            const delay = (row + col) * 32;
+            front.style.transition = 'none';
+            front.style.opacity = '0';
+            front.style.transform = 'scale(0.4)';
+            setTimeout(function() {
+              front.style.transition = 'opacity 400ms ease, transform 500ms cubic-bezier(0.34,1.56,0.64,1)';
+              front.style.opacity = '1';
+              front.style.transform = 'scale(1)';
+            }, delay);
+          });
+          // Then flip to cleaning color
+          setTimeout(function() { flipSquares('before', true); }, 200);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    if (section) observer.observe(section);
+  });
+})();
+</script>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">Sound Familiar?</p>
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-[1.1] mb-8"
+          style="font-size:clamp(2rem,4.5vw,3.25rem);">
+        Your Home Shouldn't Feel Like<br/>Another Job
+      </h2>
+      <p class="text-stone-500 text-lg leading-[1.8] max-w-2xl mx-auto mb-16">
+        Most homeowners are busy. Between work, family, and everyday responsibilities, cleaning keeps getting pushed to the bottom of the list — until the house slowly becomes harder to keep up with.
+      </p>
+    </div>
+
+    <!-- Pain points grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="card p-6 text-left card-hover fade-up">
+        <div class="text-3xl mb-4">🌫️</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Dust Builds Up</h3>
+        <p class="text-stone-500 text-sm leading-relaxed">No matter how often you wipe, it comes right back. Surfaces never stay clean for long.</p>
+      </div>
+      <div class="card p-6 text-left card-hover fade-up" style="transition-delay:80ms;">
+        <div class="text-3xl mb-4">🚿</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Bathrooms Get Grimy</h3>
+        <p class="text-stone-500 text-sm leading-relaxed">Soap scum and grime accumulate fast. Deep cleaning a bathroom takes serious effort.</p>
+      </div>
+      <div class="card p-6 text-left card-hover fade-up" style="transition-delay:160ms;">
+        <div class="text-3xl mb-4">🧹</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Floors Never Shine</h3>
+        <p class="text-stone-500 text-sm leading-relaxed">Vacuuming helps but it doesn't restore. Hard floors feel sticky. Carpets hold odors.</p>
+      </div>
+      <div class="card p-6 text-left card-hover fade-up" style="transition-delay:240ms;">
+        <div class="text-3xl mb-4">⏰</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Hours of Your Time</h3>
+        <p class="text-stone-500 text-sm leading-relaxed">Deep cleaning everything yourself takes a full weekend. That's time you'll never get back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="how-it-works" class="py-24 relative overflow-hidden grain"
+         style="background:radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,184,48,0.13) 0%, transparent 55%),
+                          radial-gradient(ellipse 55% 55% at 85% 30%, rgba(255,233,102,0.16) 0%, transparent 55%),
+                          #F4F9FF;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-500">Our System</p>
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-5"
+          style="font-size:clamp(2rem,4.5vw,3.25rem);">
+        The Whole-Home Reset System
+      </h2>
+      <p class="text-stone-600 text-lg leading-[1.8] max-w-2xl mx-auto">
+        Two steps. One simple goal: a home that stays spotless without the stress of doing it yourself.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Step 1 -->
+      <div class="card p-8 md:p-10 fade-up" style="border-color:rgba(255,184,48,0.3); box-shadow:0 4px 24px -4px rgba(255,184,48,0.18),0 2px 6px -1px rgba(0,0,0,0.05);">
+        <div class="flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl text-stone-900 font-display font-black text-2xl flex items-center justify-center flex-shrink-0"
+               style="background:#FFB830; box-shadow:0 10px 24px -4px rgba(255,184,48,0.50);">1</div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-1">Step One</p>
+            <h3 class="font-display font-700 text-2xl text-stone-800 tracking-tight mb-3">The Professional Deep Clean</h3>
+            <p class="text-stone-500 leading-[1.8]">
+              We perform a comprehensive deep clean that resets your entire home — from the inside of your appliances to baseboards and grout. Every inch gets the attention it deserves.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="card p-8 md:p-10 fade-up" style="transition-delay:120ms; background:#102E3D; border-color:#1f1f1f;">
+        <div class="flex items-start gap-5">
+          <div class="w-14 h-14 rounded-2xl font-display font-black text-2xl flex items-center justify-center flex-shrink-0"
+               style="background:#FFB830; color:#102E3D; box-shadow:0 10px 24px -4px rgba(255,184,48,0.50);">2</div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color:rgba(255,184,48,0.55);">Step Two</p>
+            <h3 class="font-display font-700 text-2xl tracking-tight mb-3" style="color:#FFB830;">2 Free Maintenance Cleans</h3>
+            <p class="leading-[1.8]" style="color:rgba(255,255,255,0.70);">
+              We return for two follow-up maintenance cleans to keep your home spotless. No extra cost. This removes the stress of trying to maintain everything on your own.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result callout -->
+    <div class="mt-8 text-center fade-up" style="transition-delay:240ms;">
+      <div class="inline-block rounded-2xl px-8 py-5"
+           style="background:rgba(255,184,48,0.12); border:1px solid rgba(255,184,48,0.30);">
+        <p class="font-display font-700 text-stone-800 text-xl tracking-tight">
+          Result: A home that feels reset — and stays that way.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE STACK ===== -->
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">What You Get</p>
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight"
+          style="font-size:clamp(2rem,4.5vw,3.25rem);">
+        Everything Included in Your Deep Clean
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-6 mb-10">
+      <!-- Kitchen -->
+      <div class="card p-7 card-hover fade-up">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🍳</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Kitchen Deep Cleaning</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Appliances wiped inside & out</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Counters sanitized</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Cabinet fronts cleaned</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Sink scrubbed & shined</li>
+        </ul>
+      </div>
+
+      <!-- Bathroom -->
+      <div class="card p-7 card-hover fade-up" style="transition-delay:80ms;">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🚿</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Bathroom Deep Scrub</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Showers and tubs scrubbed</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Toilets sanitized</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Mirrors polished</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Tile & grout scrubbed</li>
+        </ul>
+      </div>
+
+      <!-- Whole home -->
+      <div class="card p-7 card-hover fade-up" style="transition-delay:160ms;">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🏠</div>
+        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Whole-Home Cleaning</h3>
+        <ul class="space-y-2.5">
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Dusting all surfaces</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Vacuuming floors & carpets</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Mopping hard floors</li>
+          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Baseboards & vents</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bonus & price -->
+    <div class="fade-up" style="transition-delay:200ms;">
+      <div class="rounded-3xl overflow-hidden" style="background:#102E3D; box-shadow:0 20px 48px -8px rgba(0,0,0,0.25);">
+        <div class="p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <!-- Bonus left -->
+          <div class="flex-1 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full mb-4"
+                 style="background:rgba(255,184,48,0.15); border:1px solid rgba(255,184,48,0.30); color:#FFD580;">
+              🎁 BONUS INCLUDED
+            </div>
+            <h3 class="font-display font-black text-2xl md:text-3xl tracking-tight mb-3" style="color:#FFB830;">
+              2 Follow-Up Maintenance Cleans
+            </h3>
+            <p style="color:rgba(255,255,255,0.65);" class="leading-[1.75] max-w-md">
+              After your deep clean, we return twice to maintain that spotless standard — so the reset lasts.
+            </p>
+          </div>
+          <!-- Price right -->
+          <div class="text-center flex-shrink-0">
+            <p class="text-stone-400 text-sm font-semibold uppercase tracking-widest mb-2">Total Value</p>
+            <p class="font-display font-black text-stone-500 line-through" style="font-size:2.25rem;">$600+</p>
+            <p class="font-display font-black leading-none mt-1" style="color:#FFB830;font-size:1.35rem;">Today: Just the Deep Clean</p>
+            <a href="#contact" class="btn-primary mt-6 text-sm" style="padding:0.75rem 1.75rem;">
+              Claim This Offer
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRANSPARENCY ===== -->
+<section class="py-24 relative overflow-hidden grain"
+         style="background:radial-gradient(ellipse 60% 50% at 80% 50%, rgba(255,184,48,0.11) 0%, transparent 60%),
+                          radial-gradient(ellipse 50% 40% at 10% 40%, rgba(255,233,102,0.12) 0%, transparent 55%),
+                          #fafaf9;">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <div class="fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">No Hidden Agenda</p>
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-8"
+          style="font-size:clamp(2rem,4.5vw,3.25rem);">
+        Why We Offer the Free Cleans
+      </h2>
+    </div>
+
+    <div class="card p-8 md:p-12 fade-up text-center" style="transition-delay:100ms;">
+      <div class="flex flex-col gap-6">
+        <p class="text-stone-600 text-lg leading-[1.85]">
+          Here's the honest reason: <strong class="text-stone-800">most clients who stay with us long-term begin with a deep clean.</strong>
+        </p>
+        <p class="text-stone-600 text-lg leading-[1.85]">
+          Even though we're a newer company, our work is backed by years of professional cleaning experience. We're not here for a quick season — we're here to build a reputation that lasts.
+        </p>
+        <p class="text-stone-600 text-lg leading-[1.85]">
+          The two free maintenance cleans are our way of letting you experience the "maintained home" feeling after the reset — without locking you into anything.
+        </p>
+        <p class="text-stone-600 text-lg leading-[1.85]">
+          <strong class="text-stone-800">We'd rather earn your trust first.</strong> If you love the results, we'll keep you spotless. If not, you still win with a serious clean.
+        </p>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-stone-100 flex flex-wrap gap-6 items-center">
+        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">🤝</span>
+          No contracts required
+        </div>
+        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">🚫</span>
+          No pressure to subscribe
+        </div>
+        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
+          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">💯</span>
+          100% honest service
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOCIAL PROOF ===== -->
+<section id="testimonials" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 fade-up">
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-4"
+          style="font-size:clamp(2rem,4.5vw,3.25rem);">
+        Trusted by Homeowners Across Atlanta
+      </h2>
+      <!-- Star aggregate -->
+      <div class="inline-flex items-center gap-3 text-stone-600 text-sm font-medium">
+        <span class="stars text-xl">★★★★★</span>
+        <span>4.9 average · 35+ verified reviews</span>
+      </div>
+    </div>
+
+    <!-- Before/After photos -->
+    <div class="fade-up">
+      <p class="text-center font-semibold text-xs uppercase tracking-widest mb-6 text-stone-400">Before & After</p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
+          <img src="https://placehold.co/520x440/e7e5e4/78716c?text=Before+%26+After" alt="Before and after kitchen" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
+          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Kitchen Reset</span>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
+          <img src="https://placehold.co/520x440/d6d3d1/78716c?text=Before+%26+After" alt="Before and after bathroom" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
+          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Bathroom Scrub</span>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
+          <img src="https://placehold.co/520x440/c4c0bd/78716c?text=Before+%26+After" alt="Before and after living room" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
+          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Living Room</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="py-24 relative overflow-hidden grain"
+         style="background:#102E3D;">
+  <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,184,48,0.08) 0%, transparent 65%);"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center gap-10 fade-up">
+      <!-- Seal -->
+      <div class="seal flex-shrink-0">
+        <div class="text-center">
+          <p class="font-display font-black text-stone-900 text-xs leading-tight uppercase tracking-tight">Spotless<br/>Home<br/>Guarantee</p>
+        </div>
+      </div>
+      <!-- Text -->
+      <div>
+        <p class="font-semibold text-xs uppercase tracking-widest mb-3" style="color:rgba(255,184,48,0.55);">Zero Risk</p>
+        <h2 class="font-display font-black leading-tight mb-5" style="color:#FFB830;font-size:clamp(1.8rem,4vw,2.8rem);">
+          The Spotless Home Guarantee
+        </h2>
+        <p class="text-lg leading-[1.8]" style="color:rgba(255,255,255,0.70);">
+          If you're not completely happy with your cleaning, tell us within <strong style="color:white;">24 hours</strong> and we'll send a team back to fix anything that didn't meet your expectations — <strong style="color:white;">completely free.</strong>
+        </p>
+        <p class="mt-4 text-base leading-[1.8]" style="color:rgba(255,255,255,0.50);">
+          You take zero risk. We stand behind every clean, every time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCARCITY ===== -->
+<section class="py-20 relative overflow-hidden grain"
+         style="background:radial-gradient(ellipse 65% 55% at 30% 60%, rgba(255,184,48,0.15) 0%, transparent 60%),
+                          radial-gradient(ellipse 55% 50% at 80% 30%, rgba(255,215,80,0.10) 0%, transparent 55%),
+                          #fdf8ef;">
+  <div class="max-w-3xl mx-auto px-6 text-center fade-up">
+    <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-6"
+         style="background:rgba(255,184,48,0.30); border:1px solid rgba(255,184,48,0.50); color:#7a6100;">
+      <span class="w-2 h-2 rounded-full bg-amber-500 inline-block pulse-dot"></span>
+      Only a Few Spots Remaining
+    </div>
+    <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-6"
+        style="font-size:clamp(2rem,4.5vw,3rem);">
+      Limited Deep Clean Spots Each Week
+    </h2>
+    <p class="text-stone-600 text-lg leading-[1.8] max-w-2xl mx-auto mb-8">
+      Deep cleans take significantly longer than standard maintenance cleans. Because of this, we only accept a limited number of new homes each week. Once the schedule fills, this promotion closes until new availability opens.
+    </p>
+    <a href="#contact" class="btn-dark text-base">
+      Reserve My Spot
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== LEAD CAPTURE ===== -->
+<section id="contact" class="py-24 bg-white">
+  <div class="max-w-2xl mx-auto px-6">
+    <div class="text-center mb-12 fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">Get Started Today</p>
+      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-4"
+          style="font-size:clamp(2rem,4.5vw,3rem);">
+        Check My Availability
+      </h2>
+      <p class="text-stone-500 text-lg leading-relaxed">
+        Fill out the quick form below and we'll confirm your availability within 1 hour.
+      </p>
+    </div>
+
+    <div class="card p-8 md:p-10 fade-up" style="transition-delay:100ms;">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/VenHYQiYId7d7z9hgwQy"
+        style="width:100%;height:933px;border:none;border-radius:3px;"
+        id="inline-VenHYQiYId7d7z9hgwQy"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Form 1"
+        data-height="933"
+        data-layout-iframe-id="inline-VenHYQiYId7d7z9hgwQy"
+        data-form-id="VenHYQiYId7d7z9hgwQy"
+        title="Form 1">
+      </iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="mt-8 grid grid-cols-3 gap-4 fade-up" style="transition-delay:200ms;">
+      <div class="text-center">
+        <p class="font-display font-700 text-2xl text-stone-800">35+</p>
+        <p class="text-stone-400 text-xs mt-0.5">5-Star Reviews</p>
+      </div>
+      <div class="text-center border-x border-stone-200">
+        <p class="font-display font-700 text-2xl text-stone-800">500+</p>
+        <p class="text-stone-400 text-xs mt-0.5">Cleans</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display font-700 text-2xl text-stone-800">100%</p>
+        <p class="text-stone-400 text-xs mt-0.5">Satisfaction Rate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:#102E3D;" class="text-stone-400 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="LOGO.png" alt="Maid Ready Cleaning"
+               class="h-9 w-auto rounded-lg object-contain"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden items-center justify-center h-9 w-9 rounded-xl text-stone-900 font-display font-bold text-base" style="background:#FFB830;">M</div>
+          <span class="font-display font-700 text-white text-base">Maid Ready <span style="color:#FFB830;">Cleaning</span></span>
+        </div>
+        <p class="text-stone-500 text-sm leading-relaxed max-w-xs">
+          Professional deep cleaning + 2 free maintenance cleans. Serving Atlanta and surrounding areas.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#problem" class="hover:text-brand-400 transition-colors focus-visible:text-brand-400">Why Us</a></li>
+          <li><a href="#how-it-works" class="hover:text-brand-400 transition-colors">How It Works</a></li>
+          <li><a href="#testimonials" class="hover:text-brand-400 transition-colors">Reviews</a></li>
+          <li><a href="#contact" class="hover:text-brand-400 transition-colors">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-widest">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center gap-2">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            <a href="tel:+15555555555" class="hover:text-brand-400 transition-colors">(555) 123-4567</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <a href="sms:+15555555555" class="hover:text-brand-400 transition-colors">Text to Book</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Mon–Sat: 7am – 7pm
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style="border-color:rgba(255,255,255,0.07);">
+      <p>&copy; 2026 Maid Ready Cleaning. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="privacy-policy.html" class="hover:text-brand-400 transition-colors focus-visible:text-brand-400">Privacy Policy</a>
+        <a href="terms-of-service.html" class="hover:text-brand-400 transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Trigger hero immediately
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    if (i < 2) setTimeout(() => el.classList.add('visible'), i * 180);
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('lead-form').style.display = 'none';
+    document.getElementById('success-msg').classList.remove('hidden');
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
