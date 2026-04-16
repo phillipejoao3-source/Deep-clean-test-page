@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>White Glove Home Reset | Maid Ready Cleaning — Atlanta & Marietta, GA</title>
+  <meta name="description" content="The White Glove Home Reset is not a regular cleaning. It's a full top-to-bottom transformation for homes that need more than a standard clean. Serving Atlanta & Marietta, GA." />
+
+  <!-- Schema: Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Maid Ready Cleaning",
+    "description": "Premium residential cleaning services in Atlanta and Marietta, GA. Specializing in the White Glove Home Reset — a full top-to-bottom home transformation.",
+    "areaServed": ["Atlanta, GA", "Marietta, GA"],
+    "serviceType": "Residential Cleaning",
+    "url": "https://www.maidreadycleaning.com",
+    "telephone": "+1-770-555-0100",
+    "priceRange": "$$$$"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#060F1A',
+              900: '#0D1F30',
+              800: '#102E3D',
+              700: '#163a4d',
+            },
+            gold: {
+              DEFAULT: '#FFB830',
+              light: '#ffd27a',
+              dark: '#d4941a',
+            },
+            ember: {
+              DEFAULT: '#FF4E2D',
+              dark: '#cc3418',
+            },
+            cream: '#F6F8FF',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            tightest: '-0.04em',
+            tighter: '-0.03em',
+          },
+          lineHeight: {
+            relaxed: '1.7',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: #0D1F30; background: #fff; }
+    h1, h2, h3, .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    /* Grain texture overlay */
+    .grain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+      border-radius: inherit;
+    }
+
+    /* Layered shadows */
+    .shadow-premium {
+      box-shadow:
+        0 2px 4px rgba(6,15,26,0.06),
+        0 8px 20px rgba(6,15,26,0.10),
+        0 24px 48px rgba(6,15,26,0.08);
+    }
+    .shadow-gold {
+      box-shadow:
+        0 2px 8px rgba(255,184,48,0.20),
+        0 8px 24px rgba(255,184,48,0.14),
+        0 20px 40px rgba(255,184,48,0.08);
+    }
+    .shadow-ember {
+      box-shadow:
+        0 2px 8px rgba(255,78,45,0.25),
+        0 8px 24px rgba(255,78,45,0.18),
+        0 20px 40px rgba(255,78,45,0.10);
+    }
+
+    /* CTA Button styles */
+    .btn-primary {
+      background: #FF4E2D;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 2px 8px rgba(255,78,45,0.25), 0 8px 24px rgba(255,78,45,0.18);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover { background: #cc3418; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 3px solid #FFB830; outline-offset: 3px; }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: #FFB830;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      display: inline-block;
+      text-decoration: none;
+      border: 2px solid #FFB830;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-outline-gold:hover { background: #FFB830; color: #060F1A; transform: translateY(-1px); }
+    .btn-outline-gold:active { transform: translateY(0); }
+    .btn-outline-gold:focus-visible { outline: 3px solid #FFB830; outline-offset: 3px; }
+
+    .btn-gold {
+      background: #FFB830;
+      color: #060F1A;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 2px 8px rgba(255,184,48,0.20), 0 8px 24px rgba(255,184,48,0.14);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold:hover { background: #d4941a; transform: translateY(-1px); }
+    .btn-gold:active { transform: translateY(0); }
+    .btn-gold:focus-visible { outline: 3px solid #FF4E2D; outline-offset: 3px; }
+
+    /* Radial gradient backgrounds */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(255,184,48,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 100%, rgba(255,78,45,0.08) 0%, transparent 60%),
+        #060F1A;
+    }
+    .section-dark {
+      background:
+        radial-gradient(ellipse 70% 50% at 90% 50%, rgba(255,184,48,0.06) 0%, transparent 60%),
+        #0D1F30;
+    }
+
+    /* Check icon */
+    .check-gold {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: #FFB830;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* Divider */
+    .divider-gold {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #FFB830, #FF4E2D);
+      border-radius: 2px;
+    }
+
+    /* FAQ accordion */
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s ease; }
+
+    /* Sticky mobile CTA */
+    .sticky-cta { display: none; }
+    @media (max-width: 768px) {
+      .sticky-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #060F1A;
+        border-top: 1px solid rgba(255,184,48,0.25);
+        padding: 12px 16px;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+
+    /* Before/after grid */
+    .ba-card { position: relative; overflow: hidden; border-radius: 10px; }
+    .ba-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6,15,26,0.75) 0%, transparent 50%);
+    }
+    .ba-label {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .ba-label-before { background: rgba(255,78,45,0.9); color: #fff; }
+    .ba-label-after { background: rgba(255,184,48,0.95); color: #060F1A; }
+    .ba-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Input styles */
+    .form-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: #0D1F30;
+      border: 1px solid rgba(255,184,48,0.2);
+      border-radius: 6px;
+      color: #F6F8FF;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease;
+    }
+    .form-input:focus { outline: none; border-color: #FFB830; }
+    .form-input::placeholder { color: rgba(246,248,255,0.35); }
+    .form-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(246,248,255,0.55);
+      margin-bottom: 6px;
+    }
+
+    /* Testimonial card */
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid rgba(13,31,48,0.08);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: 0 2px 4px rgba(6,15,26,0.04), 0 8px 20px rgba(6,15,26,0.06);
+    }
+
+    /* Offer card */
+    .offer-card {
+      background: linear-gradient(135deg, rgba(255,184,48,0.08) 0%, rgba(255,78,45,0.05) 100%);
+      border: 1px solid rgba(255,184,48,0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #060F1A; }
+    ::-webkit-scrollbar-thumb { background: #FFB830; border-radius: 3px; }
+
+    /* Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeup { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+    /* Badge */
+    .badge-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,184,48,0.12);
+      border: 1px solid rgba(255,184,48,0.35);
+      color: #FFB830;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    /* Star rating */
+    .stars { color: #FFB830; font-size: 1rem; }
+
+    /* Nav */
+    .nav-link { color: rgba(246,248,255,0.75); font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: #FFB830; }
+
+    /* Responsive text */
+    @media (max-width: 640px) {
+      .hero-headline { font-size: 2.6rem !important; }
+    }
+  </style>
+
+  <!-- ===== ANALYTICS ===== -->
+  <!-- STEP 1: Replace G-8X2LNRY5NT with your GA4 Measurement ID -->
+  <!-- STEP 2: Replace XXXXXXXXXXXXXXXX with your Meta Pixel ID -->
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X2LNRY5NT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8X2LNRY5NT');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'XXXXXXXXXXXXXXXX');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Event Tracking -->
+  <script>
+  (function() {
+    var PAGE = 'white_glove';
+
+    // Track CTA clicks
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href*="contact"], a[href*="quote"], button, .btn');
+      if (!el) return;
+      var label = el.innerText.trim().slice(0, 50);
+      gtag('event', 'cta_clicked', { page_type: PAGE, button_text: label });
+      fbq('track', 'Lead', { content_name: PAGE + '_cta', content_category: 'cta_click' });
+    });
+
+    // Track phone clicks
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href^="tel:"]');
+      if (!el) return;
+      gtag('event', 'phone_clicked', { page_type: PAGE });
+    });
+
+    // Form submission tracking (native forms)
+    document.addEventListener('submit', function(e) {
+      gtag('event', 'form_submitted', { page_type: PAGE });
+      fbq('track', 'Lead', { content_name: PAGE + '_form' });
+    });
+
+    // GHL iframe postMessage fallback
+    window.addEventListener('message', function(e) {
+      if (e.data && typeof e.data === 'string' && e.data.includes('form_submitted')) {
+        gtag('event', 'form_submitted', { page_type: PAGE });
+        fbq('track', 'Lead', { content_name: PAGE + '_form' });
+      }
+    });
+  })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <nav style="background:#060F1A; border-bottom: 1px solid rgba(255,184,48,0.12);" class="sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="LOGO.png" alt="Maid Ready Cleaning Logo" class="h-9 w-auto" />
+        <div>
+          <div style="font-family:'DM Sans',sans-serif; font-weight:800; font-size:0.9rem; color:#F6F8FF; letter-spacing:0.06em; line-height:1;">MAIDREADY</div>
+          <div style="font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.65rem; color:#FF4E2D; letter-spacing:0.16em; text-transform:uppercase; line-height:1.4;">CLEANING</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#included" class="nav-link">What's Included</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#quote" class="btn-primary" style="font-size:0.85rem; padding:0.6rem 1.3rem;">Get My Quote</a>
+      </div>
+      <a href="#quote" class="btn-primary md:hidden" style="font-size:0.8rem; padding:0.55rem 1.1rem;">Get My Quote</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="hero-bg relative overflow-hidden grain" style="padding: 80px 20px 90px;">
+    <div class="max-w-5xl mx-auto relative" style="z-index:2;">
+
+      <!-- Badge -->
+      <div class="mb-5">
+        <span class="badge-premium">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="5" fill="#FFB830"/></svg>
+          Premium Detail Service · Atlanta & Marietta, GA
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display hero-headline text-white mb-5" style="font-size:3.8rem; font-weight:700; line-height:1.06; letter-spacing:-0.03em; max-width:780px;">
+        Your Home Doesn't Need<br />
+        <span style="color:#FFB830;">Another Cleaning.</span><br />
+        It Needs a Full Reset.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="mb-8" style="font-size:1.15rem; color:rgba(246,248,255,0.78); max-width:600px; line-height:1.72;">
+        The White Glove Home Reset is not a standard clean. It's a top-to-bottom transformation — every hidden corner, every neglected surface, every buildup zone — handled with obsessive precision.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a href="#quote" class="btn-primary" style="font-size:1.05rem; padding:1.1rem 2.2rem;">
+          Get My Free Quote →
+        </a>
+        <a href="tel:+17705550100" class="btn-outline-gold" style="font-size:1.05rem; padding:1.05rem 1.8rem;">
+          ☎ Call Us Now
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="flex flex-wrap items-center gap-6">
+        <div class="flex items-center gap-2">
+          <div class="stars">★★★★★</div>
+          <span style="color:rgba(246,248,255,0.65); font-size:0.85rem;">5.0 Avg Rating</span>
+        </div>
+        <div style="width:1px; height:20px; background:rgba(255,255,255,0.12);" class="hidden sm:block"></div>
+        <div style="color:rgba(246,248,255,0.65); font-size:0.85rem;">✓ 100% Satisfaction Guaranteed</div>
+        <div style="width:1px; height:20px; background:rgba(255,255,255,0.12);" class="hidden sm:block"></div>
+        <div style="color:rgba(246,248,255,0.65); font-size:0.85rem;">✓ Locally Owned · Atlanta Area</div>
+        <div style="width:1px; height:20px; background:rgba(255,255,255,0.12);" class="hidden sm:block"></div>
+        <div style="color:rgba(246,248,255,0.65); font-size:0.85rem;">✓ Fully Insured</div>
+      </div>
+    </div>
+
+    <!-- Decorative radial glow -->
+    <div style="position:absolute; top:-100px; right:-100px; width:500px; height:500px; background:radial-gradient(circle, rgba(255,184,48,0.07) 0%, transparent 70%); pointer-events:none;"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PAIN SECTION ═══════════════════════════════════════ -->
+  <section style="background:#F6F8FF; padding:80px 20px;" id="about">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <div>
+          <div class="divider-gold mb-5"></div>
+          <h2 class="font-display mb-6" style="font-size:2.6rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+            You've Cleaned It a Hundred Times. It Still Doesn't Feel<em style="color:#FF4E2D;"> Clean.</em>
+          </h2>
+          <p style="font-size:1.05rem; color:#2a3a4a; line-height:1.75; margin-bottom:1.2rem;">
+            Most homes look okay on the surface. But there's a persistent feeling — that the grime behind the stove, the dust on the fan blades, the buildup under the fridge, the corners no one ever gets to — is still there. Because it is.
+          </p>
+          <p style="font-size:1.05rem; color:#2a3a4a; line-height:1.75;">
+            Standard cleanings maintain the surface. They don't <strong>reset</strong> a home. And no matter how many times you clean, if those deep zones are never handled, the home never truly feels fresh.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <!-- Pain points -->
+          <div class="pain-card" style="background:#fff; border-radius:10px; padding:1.4rem 1.5rem; border-left:3px solid #FF4E2D; box-shadow:0 2px 4px rgba(6,15,26,0.05), 0 8px 20px rgba(6,15,26,0.06);">
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Buildup in places nobody touches</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Behind the fridge. Inside the oven. Under the stove burners. Years of grease, dust, and buildup — silently accumulating.</div>
+          </div>
+          <div class="pain-card" style="background:#fff; border-radius:10px; padding:1.4rem 1.5rem; border-left:3px solid #FF4E2D; box-shadow:0 2px 4px rgba(6,15,26,0.05), 0 8px 20px rgba(6,15,26,0.06);">
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Edges, corners, and vents no one reaches</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Baseboards. Window tracks. Ceiling fans. Air vents. These areas collect what every standard clean pushes aside.</div>
+          </div>
+          <div class="pain-card" style="background:#fff; border-radius:10px; padding:1.4rem 1.5rem; border-left:3px solid #FF4E2D; box-shadow:0 2px 4px rgba(6,15,26,0.05), 0 8px 20px rgba(6,15,26,0.06);">
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">You just don't have the time for this</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Between work, family, and life — the deep work never makes it to your to-do list. And even when it does, it's exhausting.</div>
+          </div>
+          <div class="pain-card" style="background:#fff; border-radius:10px; padding:1.4rem 1.5rem; border-left:3px solid #FF4E2D; box-shadow:0 2px 4px rgba(6,15,26,0.05), 0 8px 20px rgba(6,15,26,0.06);">
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Standard cleans leave you disappointed</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">You spend money on a cleaning. It looks better, but it still doesn't <em>feel</em> right. That feeling you're chasing? That's what the Reset delivers.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INTRODUCE SERVICE ═══════════════════════════════════════ -->
+  <section style="background:#fff; padding:80px 20px;">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="divider-gold mb-5 mx-auto"></div>
+      <div class="badge-premium mb-4" style="background:rgba(255,78,45,0.08); border-color:rgba(255,78,45,0.25); color:#FF4E2D;">Flagship Service</div>
+      <h2 class="font-display mb-6" style="font-size:3rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+        Introducing the<br /><em style="color:#FFB830;">White Glove Home Reset</em>
+      </h2>
+      <p style="font-size:1.1rem; color:#2a3a4a; line-height:1.78; max-width:680px; margin:0 auto 1.5rem;">
+        This is our most comprehensive service — designed for homes that haven't had a true deep reset in months or years. It's not a maintenance clean. It's not even a standard deep clean.
+      </p>
+      <p style="font-size:1.1rem; color:#2a3a4a; line-height:1.78; max-width:680px; margin:0 auto 2.5rem;">
+        The White Glove Home Reset is a full detail service: top to bottom, corner to corner, inside and behind, up high and down low. When our team leaves, your home won't just look clean — it will <strong>feel</strong> clean in a way it probably hasn't in years.
+      </p>
+
+      <!-- 3 pillars -->
+      <div class="grid sm:grid-cols-3 gap-6 text-left mt-10">
+        <div style="background:#F6F8FF; border-radius:12px; padding:1.75rem; border-top:3px solid #FFB830;">
+          <div style="font-size:2rem; margin-bottom:10px;">🔍</div>
+          <div style="font-weight:700; font-size:1.05rem; color:#060F1A; margin-bottom:8px;">Detail-Obsessed</div>
+          <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.65;">We work through a 60+ point checklist. Every surface, every edge, every neglected zone — handled with care.</div>
+        </div>
+        <div style="background:#F6F8FF; border-radius:12px; padding:1.75rem; border-top:3px solid #FFB830;">
+          <div style="font-size:2rem; margin-bottom:10px;">🏠</div>
+          <div style="font-weight:700; font-size:1.05rem; color:#060F1A; margin-bottom:8px;">Full-Home Scope</div>
+          <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.65;">We go places most cleaners won't. Behind appliances, inside ovens, deep inside cabinets, up on ceiling fans.</div>
+        </div>
+        <div style="background:#F6F8FF; border-radius:12px; padding:1.75rem; border-top:3px solid #FFB830;">
+          <div style="font-size:2rem; margin-bottom:10px;">✨</div>
+          <div style="font-weight:700; font-size:1.05rem; color:#060F1A; margin-bottom:8px;">True Transformation</div>
+          <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.65;">The goal isn't a tidier home — it's a reset. A return to that "this home feels brand new" feeling.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ WHAT'S INCLUDED ═══════════════════════════════════════ -->
+  <section id="included" style="background:#060F1A; padding:80px 20px;" class="relative overflow-hidden">
+    <!-- Radial glow -->
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:800px; height:400px; background:radial-gradient(ellipse, rgba(255,184,48,0.06) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div class="max-w-5xl mx-auto relative" style="z-index:1;">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-4" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#F6F8FF;">
+          What's Covered in Your<br /><em style="color:#FFB830;">Home Reset</em>
+        </h2>
+        <p style="font-size:1rem; color:rgba(246,248,255,0.6); max-width:520px; margin:0 auto; line-height:1.7;">Every area below is handled with the same level of care and attention. Nothing is rushed. Nothing is skipped.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- Kitchen -->
+        <div style="background:#0D1F30; border:1px solid rgba(255,184,48,0.14); border-radius:12px; padding:1.5rem;">
+          <div style="color:#FFB830; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:12px;">Kitchen</div>
+          <ul class="flex flex-col gap-2.5">
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Interior oven — racks, walls, glass door</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Interior refrigerator & freezer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Interior microwave — full detail</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Behind & underneath reachable appliances</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Stovetop, burners, drip pans, hood</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Cabinet fronts + selected interiors</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Sink, faucet, and garbage disposal rim</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bathrooms -->
+        <div style="background:#0D1F30; border:1px solid rgba(255,184,48,0.14); border-radius:12px; padding:1.5rem;">
+          <div style="color:#FFB830; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:12px;">Bathrooms</div>
+          <ul class="flex flex-col gap-2.5">
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Grout scrubbing — tub, shower, tile</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Calcium & soap scum removal</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Toilet — full detail including base & behind</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Mirror, vanity, faucet fixtures</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Inside medicine cabinet & under-sink area</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Floor edge detail and corners</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Exhaust vent cleaning</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Throughout Home -->
+        <div style="background:#0D1F30; border:1px solid rgba(255,184,48,0.14); border-radius:12px; padding:1.5rem;">
+          <div style="color:#FFB830; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:12px;">Throughout the Home</div>
+          <ul class="flex flex-col gap-2.5">
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Ceiling fans — blades, motor housing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Air vents & register covers</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Baseboards, trim, and door frames</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Window sills, tracks, and ledges</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">High dusting — light fixtures, crown molding</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Detail vacuuming — edges, corners, under furniture</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="check-gold flex-shrink-0"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#060F1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span style="font-size:0.9rem; color:rgba(246,248,255,0.85); line-height:1.45;">Floor mopping — edges and grout lines</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sub-note -->
+      <p class="text-center mt-8" style="font-size:0.9rem; color:rgba(246,248,255,0.45);">
+        Additional detail areas available based on your home's specific needs. Discussed at time of quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ VALUE JUSTIFICATION ═══════════════════════════════════════ -->
+  <section style="background:#fff; padding:80px 20px;">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <div>
+          <div class="divider-gold mb-5"></div>
+          <h2 class="font-display mb-6" style="font-size:2.6rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+            Why This Service Is<br /><em style="color:#FF4E2D;">Priced at a Premium</em>
+          </h2>
+          <p style="font-size:1.05rem; color:#2a3a4a; line-height:1.75; margin-bottom:1.2rem;">
+            We don't apologize for our pricing. Here's what you're actually paying for:
+          </p>
+
+          <ul class="flex flex-col gap-5">
+            <li class="flex items-start gap-4">
+              <div style="width:40px; height:40px; min-width:40px; background:rgba(255,184,48,0.10); border:1px solid rgba(255,184,48,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">⏱</div>
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:#060F1A; margin-bottom:3px;">More Hours, More People</div>
+                <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">This service takes significantly longer than a standard clean. We schedule the right amount of time and staff to do it properly — not rushed.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div style="width:40px; height:40px; min-width:40px; background:rgba(255,184,48,0.10); border:1px solid rgba(255,184,48,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">💪</div>
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:#060F1A; margin-bottom:3px;">Physically Demanding Work</div>
+                <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Scrubbing grout, degreasing ovens, moving and cleaning behind appliances — this is hard, skilled labor that requires training and strength.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div style="width:40px; height:40px; min-width:40px; background:rgba(255,184,48,0.10); border:1px solid rgba(255,184,48,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">🧪</div>
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:#060F1A; margin-bottom:3px;">Professional Supplies & Products</div>
+                <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">We use commercial-grade, surface-appropriate products — not the same multi-purpose spray used everywhere. The right tool for every job.</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div style="width:40px; height:40px; min-width:40px; background:rgba(255,184,48,0.10); border:1px solid rgba(255,184,48,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">✅</div>
+              <div>
+                <div style="font-weight:700; font-size:0.95rem; color:#060F1A; margin-bottom:3px;">An Uncompromising Standard</div>
+                <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">We don't leave until it's done right. Our quality check process means no corner is missed, no area is skipped, no shortcut is taken.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Value callout -->
+        <div>
+          <div style="background:#060F1A; border-radius:16px; padding:2.5rem; border:1px solid rgba(255,184,48,0.18); position:relative; overflow:hidden;">
+            <div style="position:absolute; top:-60px; right:-60px; width:200px; height:200px; background:radial-gradient(circle, rgba(255,184,48,0.08) 0%, transparent 70%);"></div>
+            <div class="font-display mb-3" style="font-size:1.5rem; font-weight:600; color:#FFB830; font-style:italic;">Think of it this way.</div>
+            <p style="font-size:1.05rem; color:rgba(246,248,255,0.82); line-height:1.75; margin-bottom:1.5rem;">
+              You can spend your weekend trying to get through a third of what we'll handle — sore, frustrated, and still not satisfied with the result.
+            </p>
+            <p style="font-size:1.05rem; color:rgba(246,248,255,0.82); line-height:1.75; margin-bottom:1.5rem;">
+              Or you can come home to a home that <em style="color:#FFB830;">actually feels reset</em> — without lifting a finger.
+            </p>
+            <p style="font-size:0.95rem; color:rgba(246,248,255,0.55); line-height:1.65;">
+              The premium price reflects the premium result. This isn't a cost — it's an investment in your peace of mind and the feeling of being truly home.
+            </p>
+            <div class="mt-6">
+              <a href="#quote" class="btn-primary" style="width:100%; text-align:center; display:block;">See If My Home Qualifies →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ WHO THIS IS FOR ═══════════════════════════════════════ -->
+  <section style="background:#F6F8FF; padding:80px 20px;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-4" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+          Is the Home Reset Right<br />for <em style="color:#FFB830;">Your Home?</em>
+        </h2>
+        <p style="font-size:1rem; color:#4a5a6a; max-width:520px; margin:0 auto; line-height:1.7;">The White Glove Home Reset is ideal for homeowners in any of these situations:</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">📅</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Preparing for Guests</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">Holiday hosting, family visits, or a special event — arrive with a home that makes the right impression.</div>
+        </div>
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">📦</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Moving In or Out</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">Start fresh in a new space, or leave your last one in perfect condition. We handle the deep work so you don't have to.</div>
+        </div>
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🔨</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Post-Renovation</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">Construction dust gets everywhere. We do the full detail cleanup so your renovation results actually shine.</div>
+        </div>
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🕐</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Months (or Years) Without a Deep Clean</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">If it's been a while since your home had real attention, the Reset is where you start. Build from a clean slate.</div>
+        </div>
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">🌿</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Seasonal Reset</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">Spring cleaning, fall prep, new year reset — some homeowners book this every season to stay ahead of buildup.</div>
+        </div>
+        <div class="who-card" style="background:#fff; border-radius:12px; padding:1.5rem 1.5rem; border:1px solid rgba(13,31,48,0.07); box-shadow:0 2px 4px rgba(6,15,26,0.04), 0 8px 16px rgba(6,15,26,0.05);">
+          <div style="font-size:1.8rem; margin-bottom:10px;">👨‍👩‍👧</div>
+          <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:6px;">Busy Families & Professionals</div>
+          <div style="font-size:0.88rem; color:#4a5a6a; line-height:1.65;">When life is too full to do what your home needs — we step in so you can reclaim your space without losing your weekend.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ BEFORE / AFTER ═══════════════════════════════════════ -->
+  <section style="background:#0D1F30; padding:80px 20px; position:relative; overflow:hidden;">
+    <div style="position:absolute; bottom:0; left:0; right:0; height:300px; background:radial-gradient(ellipse 80% 100% at 50% 100%, rgba(255,184,48,0.05) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div class="max-w-5xl mx-auto relative" style="z-index:1;">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-4" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#F6F8FF;">
+          The Transformation<br />Speaks for Itself
+        </h2>
+        <p style="font-size:1rem; color:rgba(246,248,255,0.55); max-width:480px; margin:0 auto; line-height:1.7;">These are the areas most homeowners never get to. Here's what the Reset handles.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- BA Card 1 -->
+        <div class="ba-card" style="height:280px; background:#0D2235;">
+          <img src="https://placehold.co/320x280/1a2d3f/4a6a8a?text=Before%0AInside+Oven" alt="Before - Inside Oven" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-before">Before</div>
+          <div class="ba-caption">Inside oven — years of baked-on grease</div>
+        </div>
+        <div class="ba-card" style="height:280px; background:#0D2235;">
+          <img src="https://placehold.co/320x280/1e3a2a/4a8a6a?text=After%0AInside+Oven" alt="After - Inside Oven" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-after">After</div>
+          <div class="ba-caption">Oven interior — fully restored & sanitized</div>
+        </div>
+        <!-- BA Card 2 -->
+        <div class="ba-card" style="height:280px; background:#0D2235;">
+          <img src="https://placehold.co/320x280/1a2d3f/4a6a8a?text=Before%0ABehind+Fridge" alt="Before - Behind Fridge" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-before">Before</div>
+          <div class="ba-caption">Behind refrigerator — hidden dust & debris</div>
+        </div>
+        <div class="ba-card" style="height:280px; background:#0D2235;">
+          <img src="https://placehold.co/320x280/1e3a2a/4a8a6a?text=After%0ABehind+Fridge" alt="After - Behind Fridge" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-after">After</div>
+          <div class="ba-caption">Completely cleared, wiped, and clean</div>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+        <div class="ba-card" style="height:220px; background:#0D2235;">
+          <img src="https://placehold.co/320x220/1a2d3f/4a6a8a?text=Before%0ABaseboards" alt="Before - Baseboards" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-before">Before</div>
+          <div class="ba-caption">Baseboards — dust & grime buildup</div>
+        </div>
+        <div class="ba-card" style="height:220px; background:#0D2235;">
+          <img src="https://placehold.co/320x220/1e3a2a/4a8a6a?text=After%0ABaseboards" alt="After - Baseboards" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-after">After</div>
+          <div class="ba-caption">Baseboards — white and detail-clean</div>
+        </div>
+        <div class="ba-card" style="height:220px; background:#0D2235;">
+          <img src="https://placehold.co/320x220/1a2d3f/4a6a8a?text=Before%0ABathroom+Grout" alt="Before - Bathroom" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-before">Before</div>
+          <div class="ba-caption">Shower grout — discolored & neglected</div>
+        </div>
+        <div class="ba-card" style="height:220px; background:#0D2235;">
+          <img src="https://placehold.co/320x220/1e3a2a/4a8a6a?text=After%0ABathroom+Grout" alt="After - Bathroom" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+          <div class="ba-overlay"></div>
+          <div class="ba-label ba-label-after">After</div>
+          <div class="ba-caption">Grout scrubbed, sanitized, refreshed</div>
+        </div>
+      </div>
+
+      <p class="text-center mt-6" style="font-size:0.85rem; color:rgba(246,248,255,0.4);">Real results from recent Home Reset clients — placeholder images shown above</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ REVIEWS ═══════════════════════════════════════ -->
+  <section id="reviews" style="background:#fff; padding:80px 20px;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-3" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+          What Atlanta Homeowners<br />Are Saying
+        </h2>
+        <div class="flex items-center justify-center gap-2 mt-4">
+          <div class="stars" style="font-size:1.3rem;">★★★★★</div>
+          <span style="font-size:0.95rem; color:#4a5a6a; font-weight:600;">5.0 Average Rating · 200+ Happy Homes</span>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="testimonial-card">
+          <div class="stars mb-3" style="font-size:1rem;">★★★★★</div>
+          <p style="font-size:0.95rem; color:#2a3a4a; line-height:1.72; margin-bottom:1.2rem; font-style:italic;">"I honestly thought my oven was beyond saving. They had it looking like I just bought it. The whole kitchen felt like a different room. Worth every single penny."</p>
+          <div class="flex items-center gap-3">
+            <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, #FFB830, #FF4E2D); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:0.9rem;">SL</div>
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#060F1A;">Sandra L.</div>
+              <div style="font-size:0.78rem; color:#7a8a9a;">Marietta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars mb-3" style="font-size:1rem;">★★★★★</div>
+          <p style="font-size:0.95rem; color:#2a3a4a; line-height:1.72; margin-bottom:1.2rem; font-style:italic;">"We hadn't done a real deep clean in almost 2 years. After the Home Reset, it genuinely smelled different. Cleaner. My wife cried — in a good way. We've booked them for maintenance monthly."</p>
+          <div class="flex items-center gap-3">
+            <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, #102E3D, #0D1F30); display:flex; align-items:center; justify-content:center; color:#FFB830; font-weight:700; font-size:0.9rem;">MK</div>
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#060F1A;">Marcus K.</div>
+              <div style="font-size:0.78rem; color:#7a8a9a;">Sandy Springs, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars mb-3" style="font-size:1rem;">★★★★★</div>
+          <p style="font-size:0.95rem; color:#2a3a4a; line-height:1.72; margin-bottom:1.2rem; font-style:italic;">"I booked this before the holidays because I had 20 people coming. Best decision I made. They got behind the stove, cleaned the baseboards, the fans — areas I didn't even put on the list."</p>
+          <div class="flex items-center gap-3">
+            <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, #FFB830, #d4941a); display:flex; align-items:center; justify-content:center; color:#060F1A; font-weight:700; font-size:0.9rem;">TR</div>
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#060F1A;">Tamara R.</div>
+              <div style="font-size:0.78rem; color:#7a8a9a;">Atlanta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars mb-3" style="font-size:1rem;">★★★★★</div>
+          <p style="font-size:0.95rem; color:#2a3a4a; line-height:1.72; margin-bottom:1.2rem; font-style:italic;">"Other companies said they'd do a deep clean. This is the only one that actually delivered on the promise. I could see the difference in every single room. This is the real thing."</p>
+          <div class="flex items-center gap-3">
+            <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, #FF4E2D, #cc3418); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:0.9rem;">JP</div>
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#060F1A;">James P.</div>
+              <div style="font-size:0.78rem; color:#7a8a9a;">Alpharetta, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars mb-3" style="font-size:1rem;">★★★★★</div>
+          <p style="font-size:0.95rem; color:#2a3a4a; line-height:1.72; margin-bottom:1.2rem; font-style:italic;">"We used this for our move-out clean and got our full deposit back — which the landlord said almost never happens. Maid Ready went above and beyond. Absolutely recommend."</p>
+          <div class="flex items-center gap-3">
+            <div style="width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, #102E3D, #163a4d); display:flex; align-items:center; justify-content:center; color:#FFB830; font-weight:700; font-size:0.9rem;">DN</div>
+            <div>
+              <div style="font-weight:700; font-size:0.9rem; color:#060F1A;">Diana N.</div>
+              <div style="font-size:0.78rem; color:#7a8a9a;">Kennesaw, GA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guarantee card -->
+        <div style="background:#060F1A; border-radius:12px; padding:1.75rem; display:flex; flex-direction:column; justify-content:center; text-align:center; border:1px solid rgba(255,184,48,0.2);">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🛡</div>
+          <div class="font-display" style="font-size:1.4rem; font-weight:700; color:#FFB830; margin-bottom:8px;">Our Guarantee</div>
+          <p style="font-size:0.9rem; color:rgba(246,248,255,0.72); line-height:1.65;">If anything was missed or doesn't meet your expectations, we come back and make it right. No argument. No charge. That's our commitment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ OFFER STACK ═══════════════════════════════════════ -->
+  <section style="background:#F6F8FF; padding:80px 20px;">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-4" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">
+          What You Get With<br />the <em style="color:#FFB830;">Home Reset</em>
+        </h2>
+        <p style="font-size:1rem; color:#4a5a6a; max-width:480px; margin:0 auto; line-height:1.7;">This isn't just a cleaning service. Here's everything that's included when you book your Home Reset:</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">🏆</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Full Top-to-Bottom Home Reset</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Every room, every zone, every detail area — handled by our trained team with a comprehensive checklist.</div>
+          </div>
+        </div>
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">🔄</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Free Follow-Up Touch-Up Window</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Within 48 hours of your clean, if something wasn't right — we come back. No questions, no cost.</div>
+          </div>
+        </div>
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">📆</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Priority Scheduling Access</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Home Reset clients get first access to our calendar for future maintenance cleans. No waiting in line.</div>
+          </div>
+        </div>
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">💰</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Locked Pricing on Recurring Service</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Continue with a maintenance plan after your reset and lock in your current rate — protected from future price increases.</div>
+          </div>
+        </div>
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">📋</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Personalized Home Care Recommendations</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">After your Reset, we provide notes on what to watch and simple habits to maintain results between visits.</div>
+          </div>
+        </div>
+        <div class="offer-card flex items-start gap-4">
+          <div style="font-size:1.6rem; min-width:36px;">🛡</div>
+          <div>
+            <div style="font-weight:700; font-size:1rem; color:#060F1A; margin-bottom:4px;">Satisfaction Guarantee</div>
+            <div style="font-size:0.9rem; color:#4a5a6a; line-height:1.6;">Your satisfaction is backed by our promise. We don't consider the job done until you're genuinely thrilled with the result.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="#quote" class="btn-primary" style="font-size:1.1rem; padding:1.15rem 2.5rem;">Book My Home Reset →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ QUOTE FORM ═══════════════════════════════════════ -->
+  <section id="quote" style="background:#060F1A; padding:80px 20px; position:relative; overflow:hidden;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:800px; height:400px; background:radial-gradient(ellipse, rgba(255,184,48,0.07) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div class="max-w-3xl mx-auto relative" style="z-index:1;">
+      <div class="text-center mb-10">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <div class="badge-premium mb-4">Custom Quote · No Obligation</div>
+        <h2 class="font-display mb-4" style="font-size:2.8rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#F6F8FF;">
+          Request Your<br /><em style="color:#FFB830;">Home Reset Quote</em>
+        </h2>
+        <p style="font-size:1rem; color:rgba(246,248,255,0.6); max-width:460px; margin:0 auto; line-height:1.7;">Every home is unique. We'll review your details and send a custom quote within 24 hours — no pressure, no commitment.</p>
+      </div>
+
+      <form style="background:#0D1F30; border:1px solid rgba(255,184,48,0.15); border-radius:16px; padding:2.5rem;" onsubmit="handleSubmit(event)">
+        <div class="grid sm:grid-cols-2 gap-5 mb-5">
+          <div>
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="Your name" required />
+          </div>
+          <div>
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="(770) 555-0100" required />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5 mb-5">
+          <div>
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="you@email.com" required />
+          </div>
+          <div>
+            <label class="form-label">Zip Code</label>
+            <input type="text" class="form-input" placeholder="30060" maxlength="5" />
+          </div>
+        </div>
+        <div class="mb-5">
+          <label class="form-label">Home Size</label>
+          <select class="form-input" style="cursor:pointer;">
+            <option value="" disabled selected style="color:rgba(246,248,255,0.35);">Select your home size</option>
+            <option value="under1500">Under 1,500 sq ft</option>
+            <option value="1500-2500">1,500 – 2,500 sq ft</option>
+            <option value="2500-3500">2,500 – 3,500 sq ft</option>
+            <option value="3500-5000">3,500 – 5,000 sq ft</option>
+            <option value="over5000">5,000+ sq ft</option>
+          </select>
+        </div>
+        <div class="mb-5">
+          <label class="form-label">What areas need the most attention?</label>
+          <textarea class="form-input" rows="3" placeholder="e.g., kitchen oven, bathrooms, behind appliances, baseboards..." style="resize:vertical;"></textarea>
+        </div>
+        <div class="mb-6">
+          <label class="form-label">Preferred Timeframe</label>
+          <select class="form-input" style="cursor:pointer;">
+            <option value="" disabled selected>When do you need this done?</option>
+            <option>As soon as possible</option>
+            <option>Within 1–2 weeks</option>
+            <option>Within the next month</option>
+            <option>I'm flexible — just getting a quote</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; font-size:1.1rem; padding:1.2rem; border-radius:8px; text-align:center;">
+          Send My Quote Request →
+        </button>
+        <p class="text-center mt-4" style="font-size:0.8rem; color:rgba(246,248,255,0.35);">We typically respond within a few hours. No spam. No pressure. Your info is never shared.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FAQ ═══════════════════════════════════════ -->
+  <section style="background:#fff; padding:80px 20px;">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="divider-gold mb-5 mx-auto"></div>
+        <h2 class="font-display mb-3" style="font-size:2.6rem; font-weight:700; line-height:1.1; letter-spacing:-0.03em; color:#060F1A;">Common Questions</h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; padding:0; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">How is this different from a standard deep clean?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">A standard deep clean handles general surfaces more thoroughly than a maintenance clean. The Home Reset goes significantly further — inside appliances, behind and under furniture and appliances, grout scrubbing, high dusting, cabinet interiors, and detail areas most services skip entirely. It's more labor, more time, more skill, and a dramatically better result.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">How long does the Home Reset take?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">Depending on the size and condition of your home, the Reset typically takes between 4 and 8 hours. We plan accordingly so nothing is rushed. You'll know the expected time window before we arrive.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">Do you clean behind and underneath appliances?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">Yes — for all reachable appliances. This includes the refrigerator, stove, and other major kitchen appliances. We move them (safely), clean underneath and behind, then put them back. This is one of the signature zones of the Home Reset.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">Do you bring your own supplies and products?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">Yes, completely. We arrive with everything needed — professional-grade products, tools, and equipment specific to each task. You don't need to provide or prepare anything. Just be ready to enjoy the result.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">Can I set up recurring maintenance after the Reset?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">Absolutely — and we encourage it. Once your home has been reset to a clean baseline, ongoing maintenance cleans are much faster and more affordable. Many of our Home Reset clients become long-term monthly or bi-weekly clients. We'll discuss options when we deliver your quote.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">Is this service good before guests, holidays, or moving?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">It's perfect for any of those situations. The Home Reset was specifically designed for moments when you need your home at its absolute best — not just tidy, but genuinely impressive. We recommend booking as early as possible, as calendar availability around peak times fills quickly.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">What does pricing look like?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">Pricing is custom-quoted based on your home's size, number of rooms, current condition, and specific scope. We don't use a one-size-fits-all price because no two homes are the same. What we can promise is that the value far exceeds the cost — and there are no hidden fees. Request your quote and we'll have a number to you within 24 hours.</p>
+          </div>
+        </details>
+
+        <details style="background:#F6F8FF; border:1px solid rgba(13,31,48,0.08); border-radius:10px; overflow:hidden;">
+          <summary style="padding:1.3rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+            <span style="font-weight:700; font-size:1rem; color:#060F1A; line-height:1.4;">Is this right for a home that's in rough shape?</span>
+            <span class="faq-icon" style="font-size:1.4rem; color:#FFB830; min-width:24px; text-align:center; font-weight:300;">+</span>
+          </summary>
+          <div style="padding:0 1.5rem 1.3rem; border-top:1px solid rgba(13,31,48,0.06);">
+            <p style="font-size:0.95rem; color:#4a5a6a; line-height:1.72; margin-top:1rem;">The Home Reset was built exactly for homes in that situation. The more buildup, the more this service shines compared to a standard clean. We assess the condition during our quote process to ensure we scope and staff appropriately. We've seen it all — and we're not intimidated.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FINAL CTA ═══════════════════════════════════════ -->
+  <section style="background:#060F1A; padding:90px 20px; position:relative; overflow:hidden;" class="grain">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(255,184,48,0.07) 0%, transparent 70%); pointer-events:none;"></div>
+
+    <div class="max-w-3xl mx-auto text-center relative" style="z-index:2;">
+      <div class="badge-premium mb-6 mx-auto" style="display:inline-flex;">
+        Premium Detail Service · Atlanta & Marietta, GA
+      </div>
+
+      <h2 class="font-display mb-6" style="font-size:3.2rem; font-weight:700; line-height:1.08; letter-spacing:-0.03em; color:#F6F8FF;">
+        Your Home Deserves More Than<br />
+        <em style="color:#FFB830;">Another Surface Clean.</em>
+      </h2>
+
+      <p style="font-size:1.1rem; color:rgba(246,248,255,0.7); line-height:1.75; max-width:560px; margin:0 auto 2.5rem;">
+        If your home needs more than a standard clean — if there are areas that have gone untouched for too long — the Home Reset is the answer. Request your custom quote today. No obligation, just clarity.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <a href="#quote" class="btn-primary" style="font-size:1.1rem; padding:1.15rem 2.5rem;">Get My Home Reset Quote →</a>
+        <a href="tel:+17705550100" class="btn-outline-gold" style="font-size:1.1rem; padding:1.1rem 2rem;">☎ Call Us Directly</a>
+      </div>
+
+      <!-- Final trust bar -->
+      <div class="flex flex-wrap justify-center items-center gap-6">
+        <div style="color:rgba(246,248,255,0.45); font-size:0.85rem;">✓ Locally Owned</div>
+        <div style="color:rgba(246,248,255,0.45); font-size:0.85rem;">✓ Fully Insured</div>
+        <div style="color:rgba(246,248,255,0.45); font-size:0.85rem;">✓ Satisfaction Guaranteed</div>
+        <div style="color:rgba(246,248,255,0.45); font-size:0.85rem;">✓ Atlanta & Marietta Area</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer style="background:#030A11; padding:40px 20px; border-top:1px solid rgba(255,184,48,0.1);">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <img src="LOGO.png" alt="Maid Ready Cleaning" class="h-8 w-auto" />
+        <div>
+          <div style="font-family:'DM Sans',sans-serif; font-weight:800; font-size:0.85rem; color:#F6F8FF; letter-spacing:0.06em;">MAIDREADY</div>
+          <div style="font-family:'DM Sans',sans-serif; font-weight:600; font-size:0.6rem; color:#FF4E2D; letter-spacing:0.16em; text-transform:uppercase;">CLEANING</div>
+        </div>
+      </div>
+      <div style="font-size:0.82rem; color:rgba(246,248,255,0.35);">"One call cleans it all" · Serving Atlanta & Marietta, GA</div>
+      <div style="font-size:0.8rem; color:rgba(246,248,255,0.25);">© 2025 Maid Ready Cleaning LLC. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ STICKY MOBILE CTA ═══════════════════════════════════════ -->
+  <div class="sticky-cta" style="padding-bottom:max(12px, env(safe-area-inset-bottom));">
+    <a href="tel:+17705550100" style="flex:1; text-align:center; padding:0.75rem; border:1px solid rgba(255,184,48,0.35); border-radius:8px; color:#FFB830; font-weight:600; font-size:0.9rem; text-decoration:none; background:rgba(255,184,48,0.06);">
+      ☎ Call Now
+    </a>
+    <a href="#quote" class="btn-primary" style="flex:2; text-align:center; padding:0.75rem; border-radius:8px; font-size:0.9rem;">
+      Get My Quote →
+    </a>
+  </div>
+  <!-- spacer for sticky CTA on mobile -->
+  <div class="md:hidden" style="height:68px;"></div>
+
+  <script>
+    // FAQ accordion smooth open/close
+    document.querySelectorAll('details').forEach(el => {
+      el.addEventListener('toggle', () => {
+        const icon = el.querySelector('.faq-icon');
+        if (icon) icon.textContent = el.open ? '×' : '+';
+      });
+    });
+
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Request Sent! We\'ll be in touch shortly.';
+      btn.style.background = '#16a34a';
+      btn.disabled = true;
+    }
+
+    // Scroll fade-in for sections (optional enhancement)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.who-card, .testimonial-card, .pain-card, .offer-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.5s cubic-bezier(0.22,1,0.36,1), transform 0.5s cubic-bezier(0.22,1,0.36,1)';
+        observer.observe(el);
+      });
+    }
+  </script>
+
+</body>
+</html>
