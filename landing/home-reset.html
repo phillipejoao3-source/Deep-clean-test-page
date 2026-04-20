@@ -1245,12 +1245,24 @@
     });
 
     // Form submission handler
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const data = Object.fromEntries(new FormData(form));
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        await fetch('https://services.leadconnectorhq.com/hooks/rbpDx5qxylfodlffSLqD/webhook-trigger/04818a80-1169-4ba3-8fa4-ca499a4bddb4', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, source: 'white_glove_landing', page: window.location.href })
+        });
+      } catch(err) { /* fail silently */ }
       btn.textContent = 'Request Sent! We\'ll be in touch shortly.';
       btn.style.background = '#16a34a';
-      btn.disabled = true;
+      gtag('event', 'form_submitted', { page_type: 'white_glove' });
+      fbq('track', 'Lead', { content_name: 'white_glove_form' });
     }
 
     // Scroll fade-in for sections (optional enhancement)

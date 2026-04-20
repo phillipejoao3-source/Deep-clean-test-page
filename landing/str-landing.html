@@ -1247,13 +1247,25 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
   });
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const data = Object.fromEntries(new FormData(form));
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      await fetch('https://services.leadconnectorhq.com/hooks/rbpDx5qxylfodlffSLqD/webhook-trigger/04818a80-1169-4ba3-8fa4-ca499a4bddb4', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, source: 'str_landing', page: window.location.href })
+      });
+    } catch(err) { /* fail silently */ }
     btn.textContent = "Submitted! We'll be in touch soon.";
     btn.style.background = 'rgba(126,202,219,0.15)';
     btn.style.color = 'var(--teal)';
-    btn.disabled = true;
+    gtag('event', 'form_submitted', { page_type: 'str_offer' });
+    fbq('track', 'Lead', { content_name: 'str_form' });
   }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
