@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maid Ready — STR Turnover Partner for Atlanta Hosts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #7ecadb;
+      --teal-dim:  rgba(126,202,219,0.1);
+      --teal-mid:  rgba(126,202,219,0.2);
+      --gold:      #FFB830;
+      --gold-dim:  rgba(255,184,48,0.12);
+      --dark:      #060F1A;
+      --dark-2:    #0a1a28;
+      --dark-3:    #0d2235;
+      --light:     #f8fafc;
+      --text-dark: #0d1b2a;
+      --text-body: #4a6070;
+      --text-muted: rgba(240,247,250,0.55);
+      --border-l:  rgba(0,0,0,0.07);
+      --border-t:  rgba(126,202,219,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #ffffff;
+      color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* grain */
+    .grain::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1;
+    }
+
+    /* type */
+    h1, h2, h3, h4 {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+    }
+    .serif-i {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    /* layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 64px);
+    }
+    .section { padding: clamp(80px, 10vw, 128px) 0; position: relative; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px, 5vw, 64px);
+      height: 68px;
+      background: rgba(6,15,26,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(126,202,219,0.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 30px; width: auto; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+      padding: 10px 22px; border-radius: 100px; border: none;
+      cursor: pointer; text-decoration: none;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s;
+      box-shadow: 0 4px 16px rgba(255,184,48,0.35);
+    }
+    .nav-cta:hover { transform: translateY(-2px); opacity: 0.92; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      background: var(--dark);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(155deg, rgba(6,15,26,0.92) 0%, rgba(6,15,26,0.5) 55%, rgba(6,15,26,0.8) 100%),
+        linear-gradient(to top, rgba(6,15,26,1) 0%, transparent 45%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: clamp(100px,13vw,160px) clamp(20px,5vw,64px) clamp(72px,9vw,108px);
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 48px;
+      align-items: flex-end;
+    }
+
+    /* offer pill */
+    .offer-pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: var(--dark);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+      padding: 11px 22px; border-radius: 100px;
+      margin-bottom: 30px;
+      cursor: pointer; text-decoration: none;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(255,184,48,0.45), 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .offer-pill:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,184,48,0.55); }
+    .pill-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--dark);
+      animation: blink 2s ease infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.35); }
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 20px;
+    }
+    .hero-h1 {
+      font-size: clamp(46px, 6.5vw, 92px);
+      font-weight: 800; line-height: 0.93; color: #ffffff;
+      margin-bottom: 24px; letter-spacing: -0.04em;
+    }
+    .hero-h1 .serif-i { color: var(--teal); }
+    .hero-sub {
+      font-size: clamp(15px, 1.4vw, 17px); line-height: 1.7;
+      color: rgba(240,247,250,0.62); max-width: 50ch; margin-bottom: 36px;
+    }
+    .hero-ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: var(--dark);
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
+      padding: 14px 28px; border-radius: 100px; border: none;
+      cursor: pointer; text-decoration: none;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+      box-shadow: 0 6px 20px rgba(126,202,219,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(126,202,219,0.45); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: rgba(240,247,250,0.6);
+      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
+      padding: 14px 0; border: none; cursor: pointer; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: #ffffff; }
+
+    /* hero stat cards */
+    .hero-stats { display: flex; flex-direction: column; gap: 12px; align-self: flex-end; }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 20px 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hs-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(126,202,219,0.1); border: 1px solid rgba(126,202,219,0.2);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .hs-icon svg {
+      width: 20px; height: 20px; fill: none; stroke: var(--teal);
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .hs-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 28px; font-weight: 800; letter-spacing: -0.04em; color: #ffffff; line-height: 1;
+    }
+    .hs-label { font-size: 12px; color: rgba(240,247,250,0.45); margin-top: 3px; }
+
+    /* ── FEATURE STRIP ── */
+    #feature-strip {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(126,202,219,0.08);
+      border-bottom: 1px solid rgba(126,202,219,0.08);
+    }
+    .strip-inner {
+      display: flex; align-items: stretch;
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 clamp(20px,5vw,64px);
+    }
+    .strip-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 22px 0; flex: 1;
+    }
+    .strip-item:not(:last-child) {
+      margin-right: 32px; padding-right: 32px;
+      border-right: 1px solid rgba(126,202,219,0.08);
+    }
+    .strip-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(126,202,219,0.5);
+    }
+    .strip-label { font-size: 13px; font-weight: 500; color: rgba(240,247,250,0.6); white-space: nowrap; }
+
+    /* ── EYEBROW ── */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: ''; display: block; width: 24px; height: 2px;
+      background: var(--teal); border-radius: 2px;
+    }
+    .eyebrow.light { color: var(--teal); }
+    .eyebrow.dark { color: #7a9aaa; }
+    .eyebrow.dark::before { background: #7a9aaa; }
+    .eyebrow.gold { color: var(--gold); }
+    .eyebrow.gold::before { background: var(--gold); }
+
+    .divider { width: 40px; height: 3px; border-radius: 3px; margin: 20px 0 28px; }
+    .divider.teal { background: linear-gradient(90deg, var(--teal), transparent); }
+    .divider.gold { background: linear-gradient(90deg, var(--gold), transparent); }
+    .divider.center { margin-left: auto; margin-right: auto; }
+
+    /* ── PROBLEM ── */
+    #problem { background: #ffffff; }
+    .problem-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(48px,7vw,96px); align-items: start;
+    }
+    .problem-h2 {
+      font-size: clamp(32px,4vw,52px); font-weight: 700;
+      color: var(--text-dark); margin-bottom: 0;
+    }
+    .problem-body {
+      font-size: 16px; line-height: 1.75; color: var(--text-body);
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .ctag-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #7a9aaa; margin-bottom: 16px;
+    }
+    .ctag-list { display: flex; flex-direction: column; gap: 10px; }
+    .ctag {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      background: #f8fafc;
+      border: 1px solid rgba(220,60,60,0.1);
+      border-left: 3px solid rgba(220,60,60,0.28);
+      border-radius: 8px;
+      font-size: 14px; font-weight: 500; color: var(--text-dark);
+    }
+    .ctag::before {
+      content: '×'; color: rgba(200,60,60,0.45);
+      font-size: 17px; font-weight: 700; flex-shrink: 0;
+    }
+
+    /* ── POSITIONING (dark) ── */
+    #positioning { background: var(--dark); }
+    .pos-intro {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: end; margin-bottom: 56px;
+    }
+    .pos-h2 { font-size: clamp(32px,4vw,52px); font-weight: 700; color: #ffffff; }
+    .pos-body { font-size: 16px; line-height: 1.75; color: rgba(240,247,250,0.5); }
+    .pillar-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1px; background: rgba(126,202,219,0.07);
+      border: 1px solid rgba(126,202,219,0.08);
+      border-radius: 16px; overflow: hidden;
+    }
+    .pillar {
+      background: var(--dark-2);
+      padding: 32px 26px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: background 0.25s;
+    }
+    .pillar:hover { background: var(--dark-3); }
+    .pillar-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--teal);
+    }
+    .pillar-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 18px; font-weight: 700; color: #ffffff;
+      letter-spacing: -0.025em; line-height: 1.2;
+    }
+    .pillar-body {
+      font-size: 13.5px; line-height: 1.65; color: rgba(240,247,250,0.4);
+    }
+
+    /* ── OFFER (dark-3) ── */
+    #offer { background: var(--dark-3); }
+    .offer-wrap {
+      text-align: center; max-width: 680px; margin: 0 auto;
+    }
+    .offer-box {
+      margin-top: 48px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,184,48,0.18);
+      border-radius: 24px;
+      padding: clamp(36px,5vw,60px);
+      position: relative; overflow: hidden;
+    }
+    .offer-box::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 65%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .offer-avail {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,184,48,0.08);
+      border: 1px solid rgba(255,184,48,0.18);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+    }
+    .offer-avail-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .offer-avail-text {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .offer-nums {
+      display: flex; align-items: center; justify-content: center; gap: 28px; margin: 28px 0;
+    }
+    .offer-num-block { text-align: center; }
+    .offer-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(52px,8vw,96px); font-weight: 800;
+      letter-spacing: -0.05em; line-height: 1;
+    }
+    .offer-num.invest { color: rgba(240,247,250,0.45); }
+    .offer-num.value { color: var(--gold); }
+    .offer-num-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: rgba(240,247,250,0.35); margin-top: 8px;
+    }
+    .offer-arrow-char {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 36px; color: var(--teal); line-height: 1;
+    }
+    .offer-hr { height: 1px; background: rgba(126,202,219,0.1); border: none; margin: 28px 0; }
+    .offer-bullets {
+      display: flex; flex-direction: column; gap: 10px;
+      text-align: left; max-width: 460px; margin: 0 auto 28px;
+    }
+    .offer-bullet {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: rgba(240,247,250,0.65); line-height: 1.5;
+    }
+    .ob-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(126,202,219,0.08); border: 1px solid rgba(126,202,219,0.22);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .ob-check svg {
+      width: 9px; height: 9px; fill: none; stroke: var(--teal);
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .offer-fine {
+      font-size: 13px; color: rgba(240,247,250,0.3); line-height: 1.65;
+      font-style: italic; margin-bottom: 28px;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--gold); color: var(--dark);
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+      padding: 16px 36px; border-radius: 100px; border: none;
+      cursor: pointer; text-decoration: none; width: 100%;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+      box-shadow: 0 8px 28px rgba(255,184,48,0.45);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(255,184,48,0.55); }
+    .btn-gold:active { transform: translateY(0); }
+
+    /* ── WHY DIFFERENT ── */
+    #why-different { background: #ffffff; }
+    .wd-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(48px,7vw,96px); align-items: start;
+    }
+    .wd-h2 { font-size: clamp(30px,4vw,50px); font-weight: 700; color: var(--text-dark); margin-bottom: 16px; }
+    .wd-sub { font-size: 16px; line-height: 1.75; color: var(--text-body); margin-bottom: 12px; }
+    .wd-dim { font-size: 14px; color: #9ab0bc; line-height: 1.65; }
+    /* flow */
+    .flow-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 22px; background: var(--dark); border-radius: 14px;
+      margin-top: 32px; gap: 6px;
+    }
+    .flow-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+    .flow-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(126,202,219,0.08); border: 1px solid rgba(126,202,219,0.18);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .flow-icon.gold { background: rgba(255,184,48,0.1); border-color: rgba(255,184,48,0.28); }
+    .flow-icon svg {
+      width: 17px; height: 17px; fill: none; stroke: var(--teal);
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .flow-icon.gold svg { stroke: var(--gold); }
+    .flow-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(240,247,250,0.35);
+    }
+    .flow-arrow { color: rgba(126,202,219,0.3); font-size: 14px; padding-bottom: 20px; flex-shrink: 0; }
+    /* features */
+    .wd-features { display: flex; flex-direction: column; }
+    .wd-feat {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .wd-feat:first-child { padding-top: 0; }
+    .wd-feat-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(126,202,219,0.07); border: 1px solid rgba(126,202,219,0.16);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .wd-feat-icon svg {
+      width: 18px; height: 18px; fill: none; stroke: var(--teal);
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .wd-feat-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 15px; font-weight: 700; color: var(--text-dark);
+      letter-spacing: -0.02em; margin-bottom: 4px;
+    }
+    .wd-feat-body { font-size: 13.5px; color: var(--text-body); line-height: 1.6; }
+
+    /* ── WHO IT'S FOR (dark) ── */
+    #who { background: var(--dark-2); }
+    .who-intro {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: end; margin-bottom: 52px;
+    }
+    .who-h2 { font-size: clamp(30px,4vw,50px); font-weight: 700; color: #ffffff; }
+    .who-body { font-size: 16px; line-height: 1.75; color: rgba(240,247,250,0.5); }
+    .who-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+    }
+    .who-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(126,202,219,0.1);
+      border-radius: 16px; padding: 28px 22px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: background 0.2s, border-color 0.2s, transform 0.22s;
+    }
+    .who-card:hover {
+      background: rgba(126,202,219,0.04);
+      border-color: rgba(126,202,219,0.22);
+      transform: translateY(-3px);
+    }
+    .who-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(126,202,219,0.07); border: 1px solid rgba(126,202,219,0.15);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .who-icon svg {
+      width: 20px; height: 20px; fill: none; stroke: var(--teal);
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .who-card-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 15px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;
+    }
+    .who-card-sub { font-size: 13px; color: rgba(240,247,250,0.38); line-height: 1.6; }
+
+    /* ── FUTURE / REVOLUTIONARY ── */
+    #revolutionary { background: #ffffff; }
+    .rev-intro { max-width: 640px; margin-bottom: 56px; }
+    .rev-h2 { font-size: clamp(30px,4vw,50px); font-weight: 700; color: var(--text-dark); }
+    .rev-sub { font-size: 16px; line-height: 1.75; color: var(--text-body); margin-top: 16px; }
+    .future-viz {
+      display: grid; grid-template-columns: 1fr 52px 1fr;
+      gap: 0; align-items: start; margin-bottom: 48px;
+    }
+    .future-col { display: flex; flex-direction: column; gap: 10px; }
+    .future-col-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding-bottom: 8px;
+    }
+    .future-col-label.old { color: rgba(200,60,60,0.5); }
+    .future-col-label.new { color: var(--teal); }
+    .future-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 12px 16px; border-radius: 10px;
+    }
+    .future-item.old {
+      background: rgba(220,60,60,0.03);
+      border: 1px solid rgba(220,60,60,0.1);
+    }
+    .future-item.new {
+      background: rgba(126,202,219,0.05);
+      border: 1px solid rgba(126,202,219,0.14);
+    }
+    .fdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+    .fdot.old { background: rgba(200,60,60,0.4); }
+    .fdot.new { background: var(--teal); box-shadow: 0 0 6px rgba(126,202,219,0.45); }
+    .future-text { font-size: 13.5px; line-height: 1.5; }
+    .future-item.old .future-text { color: rgba(13,27,42,0.55); }
+    .future-item.new .future-text { color: rgba(13,27,42,0.78); }
+    .future-mid {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 6px; align-self: stretch; padding-top: 40px;
+    }
+    .fmid-line { flex: 1; width: 1px; background: rgba(126,202,219,0.15); }
+    .fmid-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(126,202,219,0.07); border: 1px solid rgba(126,202,219,0.18);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fmid-icon svg {
+      width: 14px; height: 14px; fill: none; stroke: var(--teal);
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .blockquote {
+      padding: 32px 36px; background: var(--dark); border-radius: 16px;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: clamp(17px,2.2vw,22px); color: rgba(240,247,250,0.8);
+      line-height: 1.55; border-left: 3px solid var(--teal);
+    }
+    .blockquote span { color: var(--teal); }
+
+    /* ── GUARANTEE ── */
+    #guarantee { background: var(--dark); }
+    .guar-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .guar-shield {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: rgba(255,184,48,0.08); border: 1px solid rgba(255,184,48,0.22);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px;
+      box-shadow: 0 0 40px rgba(255,184,48,0.1);
+    }
+    .guar-shield svg {
+      width: 28px; height: 28px; fill: none; stroke: var(--gold);
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .guar-h2 { font-size: clamp(28px,4vw,48px); font-weight: 700; color: #ffffff; margin-bottom: 20px; }
+    .guar-body { font-size: 16px; line-height: 1.75; color: rgba(240,247,250,0.5); margin-bottom: 12px; }
+    .guar-dim { font-size: 14px; color: rgba(240,247,250,0.28); line-height: 1.65; margin-bottom: 36px; }
+    .guar-points { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+    .guar-point { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(240,247,250,0.5); }
+    .gp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+    /* ── FINAL CTA ── */
+    #final-cta {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(126,202,219,0.07);
+      text-align: center;
+    }
+    .final-h2 {
+      font-size: clamp(32px,5.5vw,68px); font-weight: 800; color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .final-sub {
+      font-size: 16px; line-height: 1.75; color: rgba(240,247,250,0.45);
+      max-width: 46ch; margin: 0 auto 36px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(126,202,219,0.06);
+      padding: 28px clamp(20px,5vw,64px);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left img { height: 22px; width: auto; opacity: 0.45; }
+    .footer-copy { font-size: 12px; color: rgba(240,247,250,0.22); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: 12px; color: rgba(240,247,250,0.22); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(240,247,250,0.6); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(6,15,26,0.75);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(126,202,219,0.15);
+      border-radius: 24px;
+      padding: clamp(32px,5vw,52px);
+      max-width: 480px; width: calc(100% - 40px);
+      position: relative;
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    }
+    .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px; border-radius: 50%; border: none;
+      background: rgba(240,247,250,0.06); color: rgba(240,247,250,0.45);
+      font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-family: inherit; transition: background 0.2s, color 0.2s;
+    }
+    .modal-close:hover { background: rgba(240,247,250,0.1); color: #fff; }
+    .modal-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(22px,4vw,32px); font-weight: 700; color: #ffffff;
+      letter-spacing: -0.03em; margin-bottom: 8px;
+    }
+    .modal-sub { font-size: 14px; color: rgba(240,247,250,0.4); margin-bottom: 28px; }
+    .form-group { margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 12px; font-weight: 600; color: rgba(240,247,250,0.45); letter-spacing: 0.04em; }
+    .form-input {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(126,202,219,0.15);
+      border-radius: 10px; color: #ffffff;
+      font-family: 'Inter', sans-serif; font-size: 16px;
+      transition: border-color 0.2s, background 0.2s; outline: none;
+    }
+    .form-input:focus { border-color: rgba(126,202,219,0.38); background: rgba(126,202,219,0.04); }
+    .form-input::placeholder { color: rgba(240,247,250,0.22); }
+    .form-submit {
+      width: 100%; margin-top: 20px; padding: 15px;
+      background: var(--teal); color: var(--dark);
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+      border: none; border-radius: 100px; cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
+      box-shadow: 0 6px 20px rgba(126,202,219,0.3);
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(126,202,219,0.4); }
+    .form-disclaimer {
+      font-size: 11px; color: rgba(240,247,250,0.22);
+      text-align: center; margin-top: 12px; line-height: 1.5;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
+    .d5 { transition-delay: 0.40s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-stats { display: none; }
+      .pos-intro { grid-template-columns: 1fr; gap: 24px; }
+      .pillar-grid { grid-template-columns: 1fr 1fr; }
+      .wd-grid { grid-template-columns: 1fr; }
+      .who-intro { grid-template-columns: 1fr; gap: 24px; }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .problem-grid { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .strip-inner { flex-wrap: wrap; }
+      .strip-item { min-width: 50%; flex: none; border-right: none !important; }
+      .future-viz { grid-template-columns: 1fr; }
+      .future-mid { flex-direction: row; padding-top: 0; }
+      .fmid-line { flex: none; width: 40px; height: 1px; }
+      .guar-points { gap: 16px; flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 40px; }
+      .offer-nums { gap: 16px; }
+      .offer-num { font-size: 48px; }
+    }
+
+    /* Mobile hero full-bleed */
+    @media (max-width: 768px) {
+      #hero { min-height: 100svh; display: block; position: relative; }
+      .hero-content {
+        position: relative; display: flex; flex-direction: column;
+        align-items: flex-start; text-align: left;
+        min-height: 100svh; padding: 100px 24px 56px;
+        gap: 0; z-index: auto;
+      }
+      .hero-bg-overlay {
+        background:
+          linear-gradient(180deg, rgba(6,15,26,0.75) 0%, rgba(6,15,26,0.82) 60%, rgba(6,15,26,0.96) 100%);
+      }
+    }
+  </style>
+
+  <!-- ===== ANALYTICS ===== -->
+  <!-- STEP 1: Replace G-8X2LNRY5NT with your GA4 Measurement ID -->
+  <!-- STEP 2: Replace 1799152184205789 with your Meta Pixel ID -->
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X2LNRY5NT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8X2LNRY5NT');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1799152184205789');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1799152184205789&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Event Tracking -->
+  <script>
+  (function() {
+    var PAGE = 'str_offer';
+
+    // Track CTA clicks
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href*="contact"], a[href*="book"], a[href*="partner"], button, .btn, .nav-cta');
+      if (!el) return;
+      var label = el.innerText.trim().slice(0, 50);
+      gtag('event', 'cta_clicked', { page_type: PAGE, button_text: label });
+      fbq('track', 'Lead', { content_name: PAGE + '_cta', content_category: 'cta_click' });
+    });
+
+    // Track phone clicks
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('a[href^="tel:"]');
+      if (!el) return;
+      gtag('event', 'phone_clicked', { page_type: PAGE });
+    });
+
+    // Form submission tracking (native forms)
+    document.addEventListener('submit', function(e) {
+      gtag('event', 'form_submitted', { page_type: PAGE });
+      fbq('track', 'Lead', { content_name: PAGE + '_form' });
+    });
+
+    // GHL iframe postMessage fallback
+    window.addEventListener('message', function(e) {
+      if (e.data && typeof e.data === 'string' && e.data.includes('form_submitted')) {
+        gtag('event', 'form_submitted', { page_type: PAGE });
+        fbq('track', 'Lead', { content_name: PAGE + '_form' });
+      }
+    });
+  })();
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="../LOGO.png" alt="Maid Ready" />
+  </div>
+  <a href="#" class="nav-cta" onclick="openModal(event)">Claim Launch Offer</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="grain">
+  <div class="hero-bg">
+    <img src="../kitchenimg.JPG" alt="Guest-ready STR kitchen" />
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <a href="#offer" class="offer-pill">
+        <span class="pill-dot"></span>
+        Launch Offer — $500 in. $1,000 out. Limited spots.
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <div class="hero-eyebrow">STR &amp; Airbnb Turnovers · Atlanta</div>
+      <h1 class="hero-h1">
+        Atlanta's Most<br>
+        <span class="serif-i">Dependable</span><br>
+        Turnover Team.
+      </h1>
+      <p class="hero-sub">Maid Ready helps Atlanta-area hosts and operators run cleaner, tighter, more dependable turnovers — faster communication, stronger execution, and a launch offer built to make testing us low-risk.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-primary" onclick="openModal(event)">
+          Claim My Launch Offer
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#problem" class="btn-secondary">
+          See how it works
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="hs-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div>
+          <div class="hs-num">Fast</div>
+          <div class="hs-label">Response on every turnover</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hs-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <div class="hs-num">$500</div>
+          <div class="hs-label">Gets you $1,000 in service value</div>
+        </div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="hs-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="hs-num">Full</div>
+          <div class="hs-label">Refund on first clean if not satisfied</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof bar -->
+    <div style="margin-top:32px; padding:14px 20px; background:rgba(126,202,219,0.07); border:1px solid rgba(126,202,219,0.15); border-radius:10px; display:inline-flex; align-items:center; gap:12px; max-width:520px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      <span style="font-size:13px; color:rgba(240,247,250,0.65); line-height:1.5;">Trusted by <strong style="color:rgba(240,247,250,0.9);">Westhome</strong> — we turned over their portfolio of <strong style="color:rgba(240,247,250,0.9);">200+ Airbnb units</strong> across Atlanta</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div id="feature-strip">
+  <div class="strip-inner">
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-label">Same-Day Communication</span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-label">Guest-Ready Every Turnover</span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-label">Proactive Issue Reporting</span>
+    </div>
+    <div class="strip-item">
+      <div class="strip-dot"></div>
+      <span class="strip-label">Scales With Your Portfolio</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem" class="section" style="padding-bottom:clamp(48px,6vw,80px);">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <div class="eyebrow dark fade-up">The Real Problem</div>
+        <h2 class="problem-h2 fade-up d1">Most Turnover Problems Aren't <span class="serif-i">Cleaning</span> Problems</h2>
+        <div class="divider teal fade-up d2"></div>
+        <div class="problem-body fade-up d2">
+          <p>A unit can be cleaned and still not be guest-ready.</p>
+          <p>That is where most turnover companies fall short. Hosts and operators do not just need someone to wipe surfaces and leave. They need a team that communicates quickly, notices issues, follows standards, moves with urgency, and helps protect the guest experience.</p>
+          <p>Because when turnovers break down, the damage goes beyond the cleaning bill.</p>
+        </div>
+      </div>
+      <div>
+        <div class="ctag-label fade-up d1">When turnovers break down</div>
+        <div class="ctag-list fade-up d2">
+          <div class="ctag">Missed details that cost you reviews</div>
+          <div class="ctag">Delayed issue reporting</div>
+          <div class="ctag">Lower guest satisfaction scores</div>
+          <div class="ctag">Last-minute scrambling</div>
+          <div class="ctag">More stress across the operation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section id="positioning" class="section">
+  <div class="container">
+    <div class="pos-intro">
+      <div>
+        <div class="eyebrow light fade-up">Our Positioning</div>
+        <h2 class="pos-h2 fade-up d1">More Than Cleaning — <span class="serif-i">Operational Support</span> for Serious Hosts</h2>
+      </div>
+      <div>
+        <p class="pos-body fade-up d2">We are not trying to be another generic turnover cleaner. We are building Maid Ready to be a stronger field partner for hosts, co-hosts, and operators who need more reliability and more support.</p>
+        <p class="pos-body fade-up d3" style="margin-top:14px;color:rgba(240,247,250,0.28);">If your current cleaning setup creates friction, delays, or uncertainty, it is costing you more than you think.</p>
+      </div>
+    </div>
+    <div class="pillar-grid fade-up d2">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Communication First</div>
+        <p class="pillar-body">Better communication. Clearer accountability. Faster responses before issues become guest problems.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Eyes on the Property</div>
+        <p class="pillar-body">A team that understands the turnover is part of the business engine — noticing issues and reporting them fast.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Cleaner Execution</div>
+        <p class="pillar-body">Guest-ready every time. Standards that hold regardless of who showed up. Fewer complaints, stronger reviews.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Built to Scale</div>
+        <p class="pillar-body">Support that can grow into maintenance, supervision, and broader operational help as your portfolio grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer" class="section">
+  <div class="container">
+    <div class="offer-wrap">
+      <div class="eyebrow gold fade-up" style="justify-content:center;">Launch Offer</div>
+      <h2 class="fade-up d1" style="font-size:clamp(28px,4vw,44px);font-weight:700;color:#ffffff;letter-spacing:-0.03em;margin-bottom:8px;">
+        A Smarter Way to <span style="color:var(--gold);">Test</span> a Turnover Partner
+      </h2>
+      <p class="fade-up d2" style="font-size:15px;color:rgba(240,247,250,0.4);line-height:1.65;">To make it easier to try Maid Ready without the usual risk, we built a launch offer around real-world testing.</p>
+      <div class="offer-box fade-up d2">
+        <div class="offer-avail">
+          <div class="offer-avail-dot"></div>
+          <span class="offer-avail-text">Limited Availability</span>
+        </div>
+        <div class="offer-nums">
+          <div class="offer-num-block">
+            <div class="offer-num invest">$500</div>
+            <div class="offer-num-label">You invest</div>
+          </div>
+          <div class="offer-arrow-char">→</div>
+          <div class="offer-num-block">
+            <div class="offer-num value">$1,000</div>
+            <div class="offer-num-label">Total service value</div>
+          </div>
+        </div>
+        <hr class="offer-hr" />
+        <div class="offer-bullets">
+          <div class="offer-bullet">
+            <div class="ob-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>
+            Start with $500 and receive $1,000 in total service value
+          </div>
+          <div class="offer-bullet">
+            <div class="ob-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>
+            Get $500 in additional service credit to apply toward future cleans
+          </div>
+          <div class="offer-bullet">
+            <div class="ob-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>
+            Test our communication, consistency, and field performance with real turnovers
+          </div>
+          <div class="offer-bullet">
+            <div class="ob-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div>
+            Full refund on your first clean if you are not satisfied — no questions asked
+          </div>
+        </div>
+        <p class="offer-fine">This is not just about getting a discount. It is about giving hosts a practical way to evaluate how Maid Ready actually performs — in real turnovers, under real conditions.</p>
+        <a href="#" class="btn-gold" onclick="openModal(event)">
+          Claim My Launch Offer
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIFFERENT -->
+<section id="why-different" class="section">
+  <div class="container">
+    <div class="wd-grid">
+      <div>
+        <div class="eyebrow dark fade-up">Why It's Different</div>
+        <h2 class="wd-h2 fade-up d1">A Better Turnover Partner Starts With a Better <span class="serif-i">Standard</span></h2>
+        <div class="divider teal fade-up d2"></div>
+        <p class="wd-sub fade-up d2">Your cleaner should make hosting easier — not harder. Maid Ready is designed to help operators run smoother turnovers by bringing a higher operational standard into the field.</p>
+        <p class="wd-dim fade-up d3">We are building a service model that helps serious hosts reduce friction and gain more control over how their units are turned.</p>
+        <div class="flow-bar fade-up d4">
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01"/></svg>
+            </div>
+            <span class="flow-label">Assign</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <span class="flow-label">Communicate</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="flow-icon gold">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="flow-label">Execute</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <span class="flow-label">Report</span>
+          </div>
+        </div>
+      </div>
+      <div class="wd-features">
+        <div class="wd-feat fade-up d1">
+          <div class="wd-feat-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div>
+            <div class="wd-feat-title">Fast Communication</div>
+            <p class="wd-feat-body">Quick, clear responses. No guessing, no chasing. You know what's happening at every step.</p>
+          </div>
+        </div>
+        <div class="wd-feat fade-up d2">
+          <div class="wd-feat-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div>
+            <div class="wd-feat-title">Guest-Ready Execution</div>
+            <p class="wd-feat-body">Every turnover is run to a standard — not just a surface clean. Guest-ready, every time.</p>
+          </div>
+        </div>
+        <div class="wd-feat fade-up d3">
+          <div class="wd-feat-icon"><svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+          <div>
+            <div class="wd-feat-title">Better Attention to Detail</div>
+            <p class="wd-feat-body">More awareness of property issues — reported before a guest finds them first.</p>
+          </div>
+        </div>
+        <div class="wd-feat fade-up d4">
+          <div class="wd-feat-icon"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+          <div>
+            <div class="wd-feat-title">Less Scrambling Behind the Scenes</div>
+            <p class="wd-feat-body">Support that reduces friction across the whole operation — not just at the property level.</p>
+          </div>
+        </div>
+        <div class="wd-feat fade-up d5">
+          <div class="wd-feat-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <div>
+            <div class="wd-feat-title">Grows With Your Portfolio</div>
+            <p class="wd-feat-body">Maintenance, supervision, and broader operational help as you scale beyond your first few units.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who" class="section">
+  <div class="container">
+    <div class="who-intro">
+      <div>
+        <div class="eyebrow light fade-up">Who It's For</div>
+        <h2 class="who-h2 fade-up d1">Built for Hosts Who Need More Than <span class="serif-i">"Someone to Clean"</span></h2>
+      </div>
+      <div>
+        <p class="who-body fade-up d2">This offer is a strong fit for operators and hosts who care about guest readiness, consistency, and having a vendor that actually helps the operation run better.</p>
+      </div>
+    </div>
+    <div class="who-grid">
+      <div class="who-card fade-up d1">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="who-card-title">Airbnb Hosts</div>
+        <p class="who-card-sub">Running 1–3 units who need reliable, guest-ready turnovers every single time.</p>
+      </div>
+      <div class="who-card fade-up d2">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="who-card-title">Co-Hosts</div>
+        <p class="who-card-sub">Managing properties on behalf of owners who demand consistency and accountability.</p>
+      </div>
+      <div class="who-card fade-up d3">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="who-card-title">Vacation Rental Operators</div>
+        <p class="who-card-sub">Professionally managing STRs with high guest experience standards.</p>
+      </div>
+      <div class="who-card fade-up d2">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0H5m14 0H9"/></svg></div>
+        <div class="who-card-title">Small Property Managers</div>
+        <p class="who-card-sub">Overseeing multiple Atlanta units who need a dependable, communicative field team.</p>
+      </div>
+      <div class="who-card fade-up d3">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+        <div class="who-card-title">Multi-Unit STR Owners</div>
+        <p class="who-card-sub">Scaling portfolios where turnover friction and inconsistency compounds fast.</p>
+      </div>
+      <div class="who-card fade-up d4">
+        <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="who-card-title">Teams Wanting Better Communication</div>
+        <p class="who-card-sub">Operators frustrated with slow responses and missed issue reports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE OF TURNOVERS -->
+<section id="revolutionary" class="section">
+  <div class="container">
+    <div class="rev-intro">
+      <div class="eyebrow dark fade-up">The Future of Turnovers</div>
+      <h2 class="rev-h2 fade-up d1">The Future of Turnovers Is <span class="serif-i">Operational</span></h2>
+      <div class="divider teal fade-up d2"></div>
+      <p class="rev-sub fade-up d2">The old way of handling turnovers is too reactive. A cleaner gets assigned. The property gets cleaned. Problems get found too late. Communication is inconsistent. Standards vary depending on who showed up that day.</p>
+    </div>
+    <div class="future-viz fade-up d3">
+      <div class="future-col">
+        <div class="future-col-label old">The Old Way</div>
+        <div class="future-item old"><div class="fdot old"></div><span class="future-text">Cleaner assigned with no visibility into status</span></div>
+        <div class="future-item old"><div class="fdot old"></div><span class="future-text">Problems found after the guest checks in</span></div>
+        <div class="future-item old"><div class="fdot old"></div><span class="future-text">Slow or no response when you reach out</span></div>
+        <div class="future-item old"><div class="fdot old"></div><span class="future-text">Standards vary by who showed up that day</span></div>
+      </div>
+      <div class="future-mid">
+        <div class="fmid-line"></div>
+        <div class="fmid-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></div>
+        <div class="fmid-line"></div>
+      </div>
+      <div class="future-col">
+        <div class="future-col-label new">The Maid Ready Way</div>
+        <div class="future-item new"><div class="fdot new"></div><span class="future-text">Clear communication from assign to completion</span></div>
+        <div class="future-item new"><div class="fdot new"></div><span class="future-text">Issues flagged before the guest ever arrives</span></div>
+        <div class="future-item new"><div class="fdot new"></div><span class="future-text">Fast, consistent responses every time</span></div>
+        <div class="future-item new"><div class="fdot new"></div><span class="future-text">Same high standard regardless of who's on site</span></div>
+      </div>
+    </div>
+    <div class="blockquote fade-up d4">
+      We are not here to simply clean units.<br>
+      We are here to help operators run a <span>cleaner, sharper, more dependable</span> operation.
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee" class="section">
+  <div class="container">
+    <div class="guar-inner">
+      <div class="guar-shield fade-up">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="eyebrow gold fade-up d1" style="justify-content:center;">Our Guarantee</div>
+      <h2 class="guar-h2 fade-up d2">Try Maid Ready Without the <span style="color:var(--gold);">Usual Risk</span></h2>
+      <div class="divider gold center fade-up d3"></div>
+      <p class="guar-body fade-up d3">Trying a new turnover vendor usually feels like a gamble. We do not think it should. If you are not happy with your first clean, we will refund it in full.</p>
+      <p class="guar-dim fade-up d4">That gives you a real chance to evaluate our communication, execution, and reliability without taking the normal risk that comes with switching providers.</p>
+      <div class="guar-points fade-up d4">
+        <div class="guar-point"><div class="gp-dot"></div>No pressure</div>
+        <div class="guar-point"><div class="gp-dot"></div>No long-term commitment</div>
+        <div class="guar-point"><div class="gp-dot"></div>Full refund on first clean</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta" class="section">
+  <div class="container">
+    <div class="eyebrow light fade-up" style="justify-content:center;">Get Started</div>
+    <h2 class="final-h2 fade-up d1">See What a Better Turnover<br><span class="serif-i">Partner</span> Looks Like</h2>
+    <p class="final-sub fade-up d2">Whether you manage one unit or several, Maid Ready is built to help make your turnovers cleaner, smoother, and easier to manage.</p>
+    <div class="fade-up d3" style="display:flex;justify-content:center;">
+      <a href="#" class="btn-gold" style="max-width:340px;" onclick="openModal(event)">
+        Claim the Launch Offer
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <img src="../LOGO.png" alt="Maid Ready" />
+    <span class="footer-copy">© 2025 Maid Ready Cleaning LLC. Atlanta, GA. All rights reserved.</span>
+  </div>
+  <div class="footer-links">
+    <a href="../privacy-policy.html">Privacy Policy</a>
+    <a href="../terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="modal-title">Claim Your Launch Offer</div>
+    <p class="modal-sub">$500 in — $1,000 in total service value. Limited spots for Atlanta-area hosts.</p>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" name="email" placeholder="you@email.com" required autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input class="form-input" type="tel" name="phone" placeholder="(555) 000-0000" autocomplete="tel" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">How many STR units do you manage?</label>
+        <input class="form-input" type="text" name="units" placeholder="e.g. 2 units in Atlanta" />
+      </div>
+      <button type="submit" class="form-submit">Submit — Claim My Offer</button>
+      <p class="form-disclaimer">No spam, ever. We will reach out within 1 business day to get you set up.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openModal(e) {
+    e.preventDefault();
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const data = Object.fromEntries(new FormData(form));
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      await fetch('https://services.leadconnectorhq.com/hooks/rbpDx5qxylfodlffSLqD/webhook-trigger/6d93957d-146a-46fd-affb-928b7e1a146c', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, source: 'str_landing', page: window.location.href })
+      });
+    } catch(err) { /* fail silently */ }
+    btn.textContent = "Submitted! We'll be in touch soon.";
+    btn.style.background = 'rgba(126,202,219,0.15)';
+    btn.style.color = 'var(--teal)';
+    gtag('event', 'form_submitted', { page_type: 'str_offer' });
+    fbq('track', 'Lead', { content_name: 'str_form' });
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
