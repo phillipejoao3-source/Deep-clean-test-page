@@ -388,20 +388,15 @@
 </script>
 
 <!-- ===== MOBILE STICKY CTA ===== -->
-<style>
-  #sticky-cta a:visited,
-  #sticky-cta a:focus,
-  #sticky-cta a:active { color: #102E3D !important; outline: none; }
-</style>
 <div id="sticky-cta" class="sm:hidden fixed bottom-0 left-0 right-0 z-40"
      style="background:linear-gradient(to top, #060F1A 60%, transparent); padding: 0.75rem 1rem 1rem;
             transition: transform 300ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease;">
-  <a href="#contact"
-     class="btn-primary w-full justify-center"
-     style="font-size:1rem; padding:0.95rem 1rem; color:#102E3D;">
+  <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+          class="btn-primary w-full justify-center"
+          style="font-size:1rem; padding:0.95rem 1rem; width:100%;">
     Claim My Free Cleans
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
+  </button>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -415,12 +410,9 @@ document.addEventListener('DOMContentLoaded', function() {
         bar.style.opacity      = '0';
         bar.style.pointerEvents = 'none';
       } else {
-        bar.style.transform    = '';
-        bar.style.opacity      = '1';
+        bar.style.transform     = '';
+        bar.style.opacity       = '1';
         bar.style.pointerEvents = '';
-        // Reset any visited/focus colour on the link
-        var link = bar.querySelector('a');
-        if (link) { link.blur(); link.style.color = '#102E3D'; }
       }
     });
   }, { threshold: 0.1 }).observe(form);
