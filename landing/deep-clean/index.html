@@ -388,8 +388,9 @@
 </script>
 
 <!-- ===== MOBILE STICKY CTA ===== -->
-<div class="sm:hidden fixed bottom-0 left-0 right-0 z-40"
-     style="background:linear-gradient(to top, #060F1A 60%, transparent); padding: 0.75rem 1rem 1rem;">
+<div id="sticky-cta" class="sm:hidden fixed bottom-0 left-0 right-0 z-40"
+     style="background:linear-gradient(to top, #060F1A 60%, transparent); padding: 0.75rem 1rem 1rem;
+            transition: transform 300ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease;">
   <a href="#contact"
      class="btn-primary w-full justify-center"
      style="font-size:1rem; padding:0.95rem 1rem;">
@@ -397,6 +398,25 @@
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
 </div>
+<script>
+(function() {
+  var bar     = document.getElementById('sticky-cta');
+  var form    = document.getElementById('contact');
+  if (!bar || !form) return;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        bar.style.transform = 'translateY(100%)';
+        bar.style.opacity   = '0';
+      } else {
+        bar.style.transform = '';
+        bar.style.opacity   = '1';
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(form);
+})();
+</script>
 
 <!-- ===== HERO ===== -->
 <section class="relative min-h-screen flex items-center pt-20 overflow-hidden grain">
