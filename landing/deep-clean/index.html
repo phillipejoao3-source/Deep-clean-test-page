@@ -311,7 +311,7 @@
     </div>
 
     <h1 class="font-display font-black text-white leading-[1.04] mb-3 sm:mb-8"
-        style="font-size:clamp(2.75rem,7vw,5rem);">
+        style="font-size:clamp(2.2rem,7vw,5rem);">
       Still Cleaning On<br/><span style="color:#FFB830; text-decoration:underline; font-style:italic;">YOUR</span> Weekends?
     </h1>
 
@@ -473,7 +473,7 @@
 </script>
 
 <!-- ===== STUDY STAT ===== -->
-<section id="study-stat" class="py-24 relative overflow-hidden grain"
+<section id="study-stat" class="py-14 sm:py-24 relative overflow-hidden grain"
          style="background:radial-gradient(ellipse 80% 70% at 50% 30%, rgba(217,70,239,0.14) 0%, transparent 60%),
                           radial-gradient(ellipse 50% 50% at 90% 90%, rgba(255,184,48,0.07) 0%, transparent 50%),
                           #0f1c24;">
@@ -482,7 +482,7 @@
     <div class="fade-up mb-4">
       <p class="font-semibold text-xs uppercase tracking-widest mb-5 text-[#FFB830]">According to Statistics</p>
       <h2 class="font-display font-black text-white leading-tight tracking-tight mb-4"
-          style="font-size:clamp(1.8rem,4vw,3rem);">
+          style="font-size:clamp(1.8rem,5.5vw,4rem);">
         This year, cleaning will take<br/><em id="study-headline-emphasis" style="color:#f472b6;">52 of your Saturday mornings.</em>
       </h2>
       <p id="study-subtext" class="text-stone-400 text-base leading-[1.8] max-w-lg mx-auto mb-10">
@@ -501,12 +501,12 @@
     <div class="fade-up inline-flex rounded-full p-1 mb-8"
          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);">
       <button id="toggle-before" onclick="setStudyMode('before')"
-              class="px-6 py-2.5 rounded-full text-sm font-bold text-white"
+              class="px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white whitespace-nowrap"
               style="background:linear-gradient(135deg,#f472b6,#d946ef); transition: opacity 200ms ease, background 200ms ease;">
         Without Maid Ready
       </button>
       <button id="toggle-after" onclick="setStudyMode('after')"
-              class="px-6 py-2.5 rounded-full text-sm font-semibold"
+              class="px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap"
               style="background:rgba(255,255,255,0.08); border:1.5px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.90); transition: opacity 200ms ease, background 200ms ease, border-color 200ms ease;">
         With Maid Ready
       </button>
@@ -696,7 +696,7 @@
         'With Maid Ready, those <strong class="text-white">364 hours</strong> are yours again. Sleep in. Go out. Do literally anything else.',
         null);
       fadeSwapText(callout,
-        '<p class="font-display font-black text-white text-lg leading-snug">364 hours/year · <span style="color:#FFB830;">all yours</span></p><p class="text-stone-400 text-sm mt-1">Reclaim your mornings starting this week.</p>',
+        '<p class="font-display font-black text-white leading-snug" style="font-size:1.25rem;letter-spacing:-0.02em;">364 hours/year · <span style="color:#FFB830;">all yours</span></p><p class="text-stone-400 text-sm mt-1.5">Reclaim your mornings starting this week.</p>',
         null);
     }
     flipSquares(m, true);
@@ -740,100 +740,115 @@
 </script>
 
 <!-- ===== PROBLEM ===== -->
-<section id="problem" class="py-24 bg-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="fade-up">
-      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">Sound Familiar?</p>
-      <h2 class="font-display font-black text-stone-900 tracking-tight leading-[1.1] mb-8"
-          style="font-size:clamp(2rem,4.5vw,3.25rem);">
-        Your Home Shouldn't Feel Like<br/>Another Job
+<section id="problem" class="py-14 sm:py-24 relative" style="background:#ffffff;">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <div class="fade-up text-center mb-14">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400" style="letter-spacing:0.16em;">Sound Familiar?</p>
+      <h2 class="font-display font-black text-stone-900 leading-[1.05] mb-5"
+          style="font-size:clamp(1.9rem,5vw,3.75rem); letter-spacing:-0.03em;">
+        Your Home Shouldn't Feel<br/>Like Another Job
       </h2>
-      <p class="text-stone-500 text-lg leading-[1.8] max-w-2xl mx-auto mb-16">
-        Most homeowners are busy. Between work, family, and everyday responsibilities, cleaning keeps getting pushed to the bottom of the list — until the house slowly becomes harder to keep up with.
+      <p class="text-stone-500 text-lg leading-[1.75] max-w-lg mx-auto">
+        Between work and family, cleaning keeps sliding — until the house starts feeling like it's winning.
       </p>
     </div>
 
-    <!-- Pain points grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="card p-6 text-left card-hover">
-        <div class="text-3xl mb-4">🌫️</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Dust Builds Up</h3>
-        <p class="text-stone-500 text-sm leading-relaxed">No matter how often you wipe, it comes right back. Surfaces never stay clean for long.</p>
+    <!-- 2×2 bubble grid -->
+    <div class="grid sm:grid-cols-2 gap-4 fade-up">
+
+      <div class="rounded-2xl p-7 flex items-start gap-5" style="background:#F7F3FF; border:1px solid #EDE8FB;">
+        <div class="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xl" style="background:#EDE8FB;">🌫️</div>
+        <div>
+          <p class="font-display font-black text-stone-900 mb-1.5" style="font-size:1.15rem; letter-spacing:-0.01em;">Dust comes right back</p>
+          <p class="text-stone-500 text-sm leading-relaxed">Wipe it today, it's back by Thursday. Surfaces never stay clean for long.</p>
+        </div>
       </div>
-      <div class="card p-6 text-left card-hover">
-        <div class="text-3xl mb-4">🚿</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Bathrooms Get Grimy</h3>
-        <p class="text-stone-500 text-sm leading-relaxed">Soap scum and grime accumulate fast. Deep cleaning a bathroom takes serious effort.</p>
+
+      <div class="rounded-2xl p-7 flex items-start gap-5" style="background:#FFF4F1; border:1px solid #FFE4DC;">
+        <div class="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xl" style="background:#FFE4DC;">🚿</div>
+        <div>
+          <p class="font-display font-black text-stone-900 mb-1.5" style="font-size:1.15rem; letter-spacing:-0.01em;">Bathrooms never feel truly clean</p>
+          <p class="text-stone-500 text-sm leading-relaxed">Soap scum builds in the grout. A quick scrub doesn't get it all.</p>
+        </div>
       </div>
-      <div class="card p-6 text-left card-hover">
-        <div class="text-3xl mb-4">🧹</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Floors Never Shine</h3>
-        <p class="text-stone-500 text-sm leading-relaxed">Vacuuming helps but it doesn't restore. Hard floors feel sticky. Carpets hold odors.</p>
+
+      <div class="rounded-2xl p-7 flex items-start gap-5" style="background:#F0FAF4; border:1px solid #D6F0E0;">
+        <div class="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xl" style="background:#D6F0E0;">🧹</div>
+        <div>
+          <p class="font-display font-black text-stone-900 mb-1.5" style="font-size:1.15rem; letter-spacing:-0.01em;">Floors never shine no matter what</p>
+          <p class="text-stone-500 text-sm leading-relaxed">Vacuuming maintains but doesn't restore. Hard floors dull. Carpets hold odors.</p>
+        </div>
       </div>
-      <div class="card p-6 text-left card-hover">
-        <div class="text-3xl mb-4">⏰</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg mb-2">Hours of Your Time</h3>
-        <p class="text-stone-500 text-sm leading-relaxed">Deep cleaning everything yourself takes a full weekend. That's time you'll never get back.</p>
+
+      <div class="rounded-2xl p-7 flex items-start gap-5" style="background:#FFFBF0; border:1px solid #FFF0C2;">
+        <div class="w-11 h-11 rounded-full flex-shrink-0 flex items-center justify-center text-xl" style="background:#FFF0C2;">⏰</div>
+        <div>
+          <p class="font-display font-black text-stone-900 mb-1.5" style="font-size:1.15rem; letter-spacing:-0.01em;">A deep clean takes the whole weekend</p>
+          <p class="text-stone-500 text-sm leading-relaxed">Not a Saturday morning — the whole weekend. Time you'll never get back.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ===== SOLUTION ===== -->
-<section id="how-it-works" class="py-24 relative overflow-hidden grain"
-         style="background:radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,184,48,0.13) 0%, transparent 55%),
-                          radial-gradient(ellipse 55% 55% at 85% 30%, rgba(255,233,102,0.16) 0%, transparent 55%),
-                          #F4F9FF;">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="text-center mb-16 fade-up">
-      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-500">Our System</p>
-      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-5"
-          style="font-size:clamp(2rem,4.5vw,3.25rem);">
-        The Whole-Home Reset System
+<section id="how-it-works" class="py-16 sm:py-28 relative overflow-hidden grain" style="background:#060F1A;">
+  <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,184,48,0.09) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(16,46,61,0.8) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-10 sm:mb-20 fade-up">
+      <p class="font-semibold text-xs uppercase tracking-widest mb-5" style="color:rgba(255,184,48,0.6); letter-spacing:0.18em;">How It Works</p>
+      <h2 class="font-display font-black text-white leading-[1.0] mb-5"
+          style="font-size:clamp(2.2rem,6vw,5rem); letter-spacing:-0.04em;">
+        Two Steps.<br/>One Spotless Home.
       </h2>
-      <p class="text-stone-600 text-lg leading-[1.8] max-w-2xl mx-auto">
-        Two steps. One simple goal: a home that stays spotless without the stress of doing it yourself.
+      <p style="color:rgba(255,255,255,0.5); font-size:1.1rem; line-height:1.75; max-width:460px; margin:0 auto;">
+        A deep clean resets everything. Then we keep it that way — on us.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-6">
       <!-- Step 1 -->
-      <div class="card p-8 md:p-10 fade-up" style="border-color:rgba(255,184,48,0.3); box-shadow:0 4px 24px -4px rgba(255,184,48,0.18),0 2px 6px -1px rgba(0,0,0,0.05);">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl text-stone-900 font-display font-black text-2xl flex items-center justify-center flex-shrink-0"
-               style="background:#FFB830; box-shadow:0 10px 24px -4px rgba(255,184,48,0.50);">1</div>
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-widest text-stone-400 mb-1">Step One</p>
-            <h3 class="font-display font-700 text-2xl text-stone-800 tracking-tight mb-3">The Professional Deep Clean</h3>
-            <p class="text-stone-500 leading-[1.8]">
-              We perform a comprehensive deep clean that resets your entire home — from the inside of your appliances to baseboards and grout. Every inch gets the attention it deserves.
-            </p>
-          </div>
-        </div>
+      <div class="fade-up rounded-3xl p-7 sm:p-10 relative overflow-hidden"
+           style="background:#102E3D; border:1px solid rgba(255,184,48,0.18); box-shadow:0 8px 40px -8px rgba(0,0,0,0.4);">
+        <div class="hidden sm:block font-display font-black text-white leading-none mb-6"
+             style="font-size:5rem; letter-spacing:-0.06em; opacity:0.12; line-height:1; position:absolute; top:24px; right:32px;">01</div>
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center font-display font-black text-xl mb-6 relative z-10"
+             style="background:#FFB830; color:#102E3D; box-shadow:0 8px 24px -4px rgba(255,184,48,0.5);">1</div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-2 relative z-10" style="color:rgba(255,184,48,0.55); letter-spacing:0.14em;">Step One</p>
+        <h3 class="font-display font-black text-white mb-4 relative z-10"
+            style="font-size:1.85rem; letter-spacing:-0.03em; line-height:1.1;">The Professional<br/>Deep Clean</h3>
+        <p class="relative z-10 leading-[1.8]" style="color:rgba(255,255,255,0.60); font-size:0.95rem;">
+          We reset your entire home — appliances, baseboards, grout, every neglected corner. A level of clean your regular routine never reaches.
+        </p>
       </div>
 
       <!-- Step 2 -->
-      <div class="card p-8 md:p-10 fade-up" style="transition-delay:120ms; background:#102E3D; border-color:#1f1f1f;">
-        <div class="flex items-start gap-5">
-          <div class="w-14 h-14 rounded-2xl font-display font-black text-2xl flex items-center justify-center flex-shrink-0"
-               style="background:#FFB830; color:#102E3D; box-shadow:0 10px 24px -4px rgba(255,184,48,0.50);">2</div>
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color:rgba(255,184,48,0.55);">Step Two</p>
-            <h3 class="font-display font-700 text-2xl tracking-tight mb-3" style="color:#FFB830;">2 Free Maintenance Cleans</h3>
-            <p class="leading-[1.8]" style="color:rgba(255,255,255,0.70);">
-              We return for two follow-up maintenance cleans to keep your home spotless. No extra cost. This removes the stress of trying to maintain everything on your own.
-            </p>
-          </div>
-        </div>
+      <div class="fade-up rounded-3xl p-7 sm:p-10 relative overflow-hidden"
+           style="transition-delay:120ms; background:linear-gradient(135deg,#FFB830 0%,#e6a428 100%); border:1px solid rgba(255,255,255,0.15); box-shadow:0 8px 40px -8px rgba(255,184,48,0.4);">
+        <div class="hidden sm:block font-display font-black leading-none mb-6"
+             style="font-size:5rem; letter-spacing:-0.06em; opacity:0.15; line-height:1; position:absolute; top:24px; right:32px; color:#102E3D;">02</div>
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center font-display font-black text-xl mb-6 relative z-10"
+             style="background:#102E3D; color:#FFB830; box-shadow:0 8px 24px -4px rgba(0,0,0,0.4);">2</div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-2 relative z-10" style="color:rgba(16,46,61,0.65); letter-spacing:0.14em;">Step Two</p>
+        <h3 class="font-display font-black mb-4 relative z-10"
+            style="color:#102E3D; font-size:1.85rem; letter-spacing:-0.03em; line-height:1.1;">2 Free<br/>Maintenance Cleans</h3>
+        <p class="relative z-10 leading-[1.8]" style="color:rgba(16,46,61,0.75); font-size:0.95rem;">
+          We come back twice — at no cost — to keep the reset lasting. No contracts, no commitments. Just a spotless home, maintained.
+        </p>
       </div>
     </div>
 
     <!-- Result callout -->
     <div class="mt-8 text-center fade-up" style="transition-delay:240ms;">
-      <div class="inline-block rounded-2xl px-8 py-5"
-           style="background:rgba(255,184,48,0.12); border:1px solid rgba(255,184,48,0.30);">
-        <p class="font-display font-700 text-stone-800 text-xl tracking-tight">
-          Result: A home that feels reset — and stays that way.
+      <div class="inline-flex items-center gap-4 rounded-2xl px-8 py-5"
+           style="background:rgba(255,184,48,0.07); border:1px solid rgba(255,184,48,0.20);">
+        <svg width="20" height="20" fill="none" stroke="#FFB830" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        <p class="font-display font-black text-white" style="font-size:1.15rem; letter-spacing:-0.02em;">
+          Result: A home that feels reset — and <em style="color:#FFB830;">stays that way.</em>
         </p>
       </div>
     </div>
@@ -841,77 +856,107 @@
 </section>
 
 <!-- ===== VALUE STACK ===== -->
-<section class="py-24 bg-white">
+<section class="py-16 sm:py-28 bg-white">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-16 fade-up">
-      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">What You Get</p>
-      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight"
-          style="font-size:clamp(2rem,4.5vw,3.25rem);">
-        Everything Included in Your Deep Clean
+      <p class="font-semibold text-xs uppercase tracking-widest mb-5 text-stone-400" style="letter-spacing:0.18em;">What You Get</p>
+      <h2 class="font-display font-black text-stone-900 leading-[1.0] mb-5"
+          style="font-size:clamp(2.2rem,6vw,4.5rem); letter-spacing:-0.04em;">
+        Every Room.<br/>Every Corner. Done.
       </h2>
+      <p class="text-stone-500 text-xl leading-[1.75] max-w-lg mx-auto">
+        One deep clean covers the whole home — nothing left behind.
+      </p>
     </div>
 
-    <div class="grid sm:grid-cols-3 gap-6 mb-10">
+    <div class="grid sm:grid-cols-3 gap-5 mb-8">
       <!-- Kitchen -->
-      <div class="card p-7 card-hover">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🍳</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Kitchen Deep Cleaning</h3>
-        <ul class="space-y-2.5">
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Appliances wiped inside & out</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Counters sanitized</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Cabinet fronts cleaned</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Sink scrubbed & shined</li>
+      <div class="card p-5 sm:p-8 card-hover" style="border-color:rgba(255,184,48,0.2);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4 sm:mb-6"
+             style="background:#060F1A; box-shadow:0 8px 20px -4px rgba(6,15,26,0.35);">🍳</div>
+        <h3 class="font-display font-black text-stone-900 mb-5" style="font-size:1.5rem; letter-spacing:-0.02em;">Kitchen</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Appliances wiped inside & out
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Counters & backsplash sanitized
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Cabinet fronts degreased
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Sink scrubbed & shined
+          </li>
         </ul>
       </div>
 
       <!-- Bathroom -->
-      <div class="card p-7 card-hover">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🚿</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Bathroom Deep Scrub</h3>
-        <ul class="space-y-2.5">
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Showers and tubs scrubbed</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Toilets sanitized</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Mirrors polished</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Tile & grout scrubbed</li>
+      <div class="card p-5 sm:p-8 card-hover" style="border-color:rgba(255,184,48,0.2);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4 sm:mb-6"
+             style="background:#060F1A; box-shadow:0 8px 20px -4px rgba(6,15,26,0.35);">🚿</div>
+        <h3 class="font-display font-black text-stone-900 mb-5" style="font-size:1.5rem; letter-spacing:-0.02em;">Bathrooms</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Showers & tubs scrubbed
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Toilets fully sanitized
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Mirrors polished streak-free
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Tile & grout scrubbed
+          </li>
         </ul>
       </div>
 
       <!-- Whole home -->
-      <div class="card p-7 card-hover">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style="background:linear-gradient(135deg,#EAF2FF,#FFD580);box-shadow:0 4px 12px -2px rgba(255,184,48,0.30);">🏠</div>
-        <h3 class="font-display font-700 text-stone-800 text-lg tracking-tight mb-4">Whole-Home Cleaning</h3>
-        <ul class="space-y-2.5">
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Dusting all surfaces</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Vacuuming floors & carpets</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Mopping hard floors</li>
-          <li class="flex items-center gap-2.5 text-stone-500 text-sm"><span class="check">✓</span> Baseboards & vents</li>
+      <div class="card p-5 sm:p-8 card-hover" style="border-color:rgba(255,184,48,0.2);">
+        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4 sm:mb-6"
+             style="background:#060F1A; box-shadow:0 8px 20px -4px rgba(6,15,26,0.35);">🏠</div>
+        <h3 class="font-display font-black text-stone-900 mb-5" style="font-size:1.5rem; letter-spacing:-0.02em;">Every Room</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> All surfaces dusted
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Floors vacuumed & mopped
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Baseboards & door frames
+          </li>
+          <li class="flex items-center gap-3 text-stone-600 text-sm">
+            <span style="color:#FFB830; font-weight:700; flex-shrink:0;">✓</span> Vents & ceiling fans
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- Bonus & price -->
     <div class="fade-up" style="transition-delay:200ms;">
-      <div class="rounded-3xl overflow-hidden" style="background:#102E3D; box-shadow:0 20px 48px -8px rgba(0,0,0,0.25);">
-        <div class="p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <!-- Bonus left -->
+      <div class="rounded-3xl overflow-hidden relative"
+           style="background:linear-gradient(135deg,#060F1A 0%,#102E3D 100%); box-shadow:0 24px 60px -12px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,184,48,0.15) inset;">
+        <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,184,48,0.10) 0%,transparent 70%);pointer-events:none;"></div>
+        <div class="p-6 sm:p-8 md:p-12 flex flex-col md:flex-row items-center gap-6 md:gap-16 relative z-10">
           <div class="flex-1 text-center md:text-left">
-            <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full mb-4"
-                 style="background:rgba(255,184,48,0.15); border:1px solid rgba(255,184,48,0.30); color:#FFD580;">
-              🎁 BONUS INCLUDED
+            <div class="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+                 style="background:rgba(255,184,48,0.12); border:1px solid rgba(255,184,48,0.28); color:#FFD580; letter-spacing:0.1em;">
+              🎁 BONUS INCLUDED FREE
             </div>
-            <h3 class="font-display font-black text-2xl md:text-3xl tracking-tight mb-3" style="color:#FFB830;">
-              2 Follow-Up Maintenance Cleans
+            <h3 class="font-display font-black text-white mb-4" style="font-size:clamp(1.8rem,3.5vw,2.75rem); letter-spacing:-0.03em; line-height:1.1;">
+              +2 Free Maintenance<br/>Cleans On Us
             </h3>
-            <p style="color:rgba(255,255,255,0.65);" class="leading-[1.75] max-w-md">
-              After your deep clean, we return twice to maintain that spotless standard — so the reset lasts.
+            <p style="color:rgba(255,255,255,0.55); line-height:1.8;">
+              After your deep clean, we come back twice at no cost — so that spotless feeling doesn't fade after a week.
             </p>
           </div>
-          <!-- Price right -->
           <div class="text-center flex-shrink-0">
-            <p class="text-stone-400 text-sm font-semibold uppercase tracking-widest mb-2">Total Value</p>
-            <p class="font-display font-black text-stone-500 line-through" style="font-size:2.25rem;">$600+</p>
-            <p class="font-display font-black leading-none mt-1" style="color:#FFB830;font-size:1.35rem;">Today: Just the Deep Clean</p>
-            <a href="#contact" class="btn-primary mt-6 text-sm" style="padding:0.75rem 1.75rem;">
+            <p style="color:rgba(255,255,255,0.3); font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem;">Up to</p>
+            <p class="font-display font-black line-through" style="font-size:2.5rem; color:rgba(255,255,255,0.25); line-height:1;">$1,000+</p>
+            <p class="font-display font-black mt-1 mb-6" style="color:#FFB830; font-size:1.2rem;">Today: Just the Deep Clean</p>
+            <a href="#contact" class="btn-primary" style="padding:0.9rem 2rem; font-size:1rem;">
               Claim This Offer
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -923,89 +968,94 @@
 </section>
 
 <!-- ===== TRANSPARENCY ===== -->
-<section class="py-24 relative overflow-hidden grain"
-         style="background:radial-gradient(ellipse 60% 50% at 80% 50%, rgba(255,184,48,0.11) 0%, transparent 60%),
-                          radial-gradient(ellipse 50% 40% at 10% 40%, rgba(255,233,102,0.12) 0%, transparent 55%),
-                          #fafaf9;">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <div class="fade-up">
-      <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">No Hidden Agenda</p>
-      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-8"
-          style="font-size:clamp(2rem,4.5vw,3.25rem);">
-        Why We Offer the Free Cleans
-      </h2>
-    </div>
+<section class="py-16 sm:py-28 relative overflow-hidden" style="background:#FAFAF8;">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-14 items-center fade-up">
 
-    <div class="card p-8 md:p-12 fade-up text-center" style="transition-delay:100ms;">
-      <div class="flex flex-col gap-6">
-        <p class="text-stone-600 text-lg leading-[1.85]">
-          Here's the honest reason: <strong class="text-stone-800">most clients who stay with us long-term begin with a deep clean.</strong>
+      <!-- Pull quote left -->
+      <div>
+        <p class="font-semibold text-xs uppercase tracking-widest mb-6 text-stone-400" style="letter-spacing:0.18em;">No Hidden Agenda</p>
+        <h2 class="font-display font-black text-stone-900 leading-[1.0] mb-8"
+            style="font-size:clamp(2rem,5vw,4rem); letter-spacing:-0.04em;">
+          We'd rather<br/><em style="color:#FFB830;">earn your trust</em><br/>than demand it.
+        </h2>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                 style="background:#060F1A;">
+              <svg width="14" height="14" fill="none" stroke="#FFB830" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="text-stone-700 font-medium">No contracts required</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                 style="background:#060F1A;">
+              <svg width="14" height="14" fill="none" stroke="#FFB830" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="text-stone-700 font-medium">No pressure to continue</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                 style="background:#060F1A;">
+              <svg width="14" height="14" fill="none" stroke="#FFB830" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="text-stone-700 font-medium">You win either way</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explanation right -->
+      <div class="card p-8 md:p-10" style="border-color:rgba(255,184,48,0.18); box-shadow:0 8px 32px -8px rgba(0,0,0,0.08);">
+        <p class="font-display font-black text-stone-900 mb-5" style="font-size:1.35rem; letter-spacing:-0.02em; line-height:1.3;">
+          "Most long-term clients start with a deep clean."
         </p>
-        <p class="text-stone-600 text-lg leading-[1.85]">
-          Even though we're a newer company, our work is backed by years of professional cleaning experience. We're not here for a quick season — we're here to build a reputation that lasts.
+        <p class="text-stone-600 leading-[1.8] mb-5">
+          The free maintenance cleans aren't a gimmick — they're how we let you experience a <em>maintained</em> home after the reset, without committing to anything.
         </p>
-        <p class="text-stone-600 text-lg leading-[1.85]">
-          The two free maintenance cleans are our way of letting you experience the "maintained home" feeling after the reset — without locking you into anything.
-        </p>
-        <p class="text-stone-600 text-lg leading-[1.85]">
-          <strong class="text-stone-800">We'd rather earn your trust first.</strong> If you love the results, we'll keep you spotless. If not, you still win with a serious clean.
+        <p class="text-stone-600 leading-[1.8]">
+          We're building Maid Ready on real results, not contracts. If you love it, great — we'll keep you spotless. If not, you still walk away with a serious, professional deep clean.
         </p>
       </div>
 
-      <div class="mt-8 pt-8 border-t border-stone-100 flex flex-wrap gap-6 items-center">
-        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
-          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">🤝</span>
-          No contracts required
-        </div>
-        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
-          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">🚫</span>
-          No pressure to subscribe
-        </div>
-        <div class="flex items-center gap-2.5 text-stone-600 text-sm font-medium">
-          <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0" style="background:rgba(255,184,48,0.14);">💯</span>
-          100% honest service
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== SOCIAL PROOF ===== -->
-<section id="testimonials" class="py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="testimonials" class="py-16 sm:py-28 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-16 fade-up">
-      <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-4"
-          style="font-size:clamp(2rem,4.5vw,3.25rem);">
-        Trusted by Homeowners Across Atlanta
+      <p class="font-semibold text-xs uppercase tracking-widest mb-5 text-stone-400" style="letter-spacing:0.18em;">Real Results</p>
+      <h2 class="font-display font-black text-stone-900 leading-[1.0] mb-6"
+          style="font-size:clamp(2.2rem,6vw,4.5rem); letter-spacing:-0.04em;">
+        Trusted by Atlanta<br/>Homeowners
       </h2>
-      <!-- Star aggregate -->
-      <div class="inline-flex items-center gap-3 text-stone-600 text-sm font-medium">
-        <span class="stars text-xl">★★★★★</span>
-        <span>4.9 average · 35+ verified reviews</span>
+      <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full"
+           style="background:#060F1A; border:1px solid rgba(255,184,48,0.2);">
+        <span style="color:#FFB830; font-size:1rem; letter-spacing:0.05em;">★★★★★</span>
+        <span style="color:rgba(255,255,255,0.75); font-size:0.85rem; font-weight:600;">4.9 average · 35+ verified Google reviews</span>
       </div>
     </div>
 
     <!-- Before/After photos -->
-    <div>
-      <p class="text-center font-semibold text-xs uppercase tracking-widest mb-6 text-stone-400">Before & After</p>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
-          <img src="https://placehold.co/520x440/e7e5e4/78716c?text=Before+%26+After" alt="Before and after kitchen" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
-          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Kitchen Reset</span>
+    <div class="fade-up" style="transition-delay:100ms;">
+      <p class="text-center font-semibold text-xs uppercase tracking-widest mb-8 text-stone-400" style="letter-spacing:0.16em;">Before & After</p>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="relative rounded-3xl overflow-hidden" style="height:280px; box-shadow:0 12px 40px -8px rgba(0,0,0,0.18);">
+          <img src="https://placehold.co/600x560/e7e5e4/78716c?text=Kitchen+Before+%26+After" alt="Kitchen before and after" class="w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(6,15,26,0.75) 0%,transparent 55%);"></div>
+          <div class="absolute inset-0" style="background:rgba(255,184,48,0.12); mix-blend-mode:multiply;"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <span class="text-white font-display font-black" style="font-size:1.25rem; letter-spacing:-0.02em;">Kitchen Reset</span>
+          </div>
         </div>
-        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
-          <img src="https://placehold.co/520x440/d6d3d1/78716c?text=Before+%26+After" alt="Before and after bathroom" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
-          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Bathroom Scrub</span>
-        </div>
-        <div class="relative rounded-2xl overflow-hidden" style="height:220px;">
-          <img src="https://placehold.co/520x440/c4c0bd/78716c?text=Before+%26+After" alt="Before and after living room" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class="absolute inset-0" style="background:rgba(255,184,48,0.18);mix-blend-mode:multiply;"></div>
-          <span class="absolute bottom-4 left-4 text-white font-semibold text-sm">Living Room</span>
+        <div class="relative rounded-3xl overflow-hidden" style="height:280px; box-shadow:0 12px 40px -8px rgba(0,0,0,0.18);">
+          <img src="https://placehold.co/600x560/d6d3d1/78716c?text=Bathroom+Before+%26+After" alt="Bathroom before and after" class="w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(6,15,26,0.75) 0%,transparent 55%);"></div>
+          <div class="absolute inset-0" style="background:rgba(255,184,48,0.12); mix-blend-mode:multiply;"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <span class="text-white font-display font-black" style="font-size:1.25rem; letter-spacing:-0.02em;">Bathroom Scrub</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1013,61 +1063,73 @@
 </section>
 
 <!-- ===== GUARANTEE ===== -->
-<section class="py-24 relative overflow-hidden grain"
-         style="background:#102E3D;">
-  <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,184,48,0.08) 0%, transparent 65%);"></div>
-  <div class="relative z-10 max-w-4xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-center gap-10">
-      <!-- Seal -->
-      <div class="seal flex-shrink-0">
-        <div class="text-center">
-          <p class="font-display font-black text-stone-900 text-xs leading-tight uppercase tracking-tight">Spotless<br/>Home<br/>Guarantee</p>
-        </div>
-      </div>
-      <!-- Text -->
-      <div>
-        <p class="font-semibold text-xs uppercase tracking-widest mb-3" style="color:rgba(255,184,48,0.55);">Zero Risk</p>
-        <h2 class="font-display font-black leading-tight mb-5" style="color:#FFB830;font-size:clamp(1.8rem,4vw,2.8rem);">
-          The Spotless Home Guarantee
-        </h2>
-        <p class="text-lg leading-[1.8]" style="color:rgba(255,255,255,0.70);">
-          If you're not completely happy with your cleaning, tell us within <strong style="color:white;">24 hours</strong> and we'll send a team back to fix anything that didn't meet your expectations — <strong style="color:white;">completely free.</strong>
-        </p>
-        <p class="mt-4 text-base leading-[1.8]" style="color:rgba(255,255,255,0.50);">
-          You take zero risk. We stand behind every clean, every time.
-        </p>
+<section class="py-14 sm:py-24 relative overflow-hidden" style="background:#060F1A;">
+  <!-- Ambient gold glow -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(255,184,48,0.10) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center fade-up">
+
+    <!-- Stamp seal -->
+    <div class="mx-auto mb-8 relative" style="width:96px; height:96px;">
+      <!-- Outer dashed ring -->
+      <svg width="96" height="96" viewBox="0 0 96 96" fill="none" style="position:absolute;inset:0;">
+        <circle cx="48" cy="48" r="44" stroke="#FFB830" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+      </svg>
+      <!-- Inner filled circle -->
+      <div style="position:absolute; inset:12px; background:#FFB830; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 32px -8px rgba(255,184,48,0.6);">
+        <svg width="30" height="30" fill="none" stroke="#102E3D" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
     </div>
+
+    <p class="font-semibold text-xs uppercase tracking-widest mb-5" style="color:rgba(255,184,48,0.55); letter-spacing:0.18em;">Zero Risk</p>
+
+    <h2 class="font-display font-black text-white leading-[1.0] mb-7"
+        style="font-size:clamp(2.2rem,6vw,4.5rem); letter-spacing:-0.04em;">
+      The Spotless<br/>Home Guarantee
+    </h2>
+
+    <!-- Divider -->
+    <div style="width:48px; height:2px; background:#FFB830; margin:0 auto 1.75rem; opacity:0.7; border-radius:2px;"></div>
+
+    <p class="leading-[1.85] mb-4" style="color:rgba(255,255,255,0.65); font-size:1.1rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      Not happy with your clean? Tell us within <strong style="color:#FFB830;">24 hours</strong> and we'll send the team back to fix anything that missed the mark —&nbsp;<strong style="color:#FFB830;">completely free.</strong>
+    </p>
+
+    <p style="color:rgba(255,255,255,0.3); font-size:0.875rem;">
+      You take zero risk. We stand behind every clean, every time.
+    </p>
+
   </div>
 </section>
 
 <!-- ===== SCARCITY ===== -->
-<section class="py-20 relative overflow-hidden grain"
-         style="background:radial-gradient(ellipse 65% 55% at 30% 60%, rgba(255,184,48,0.15) 0%, transparent 60%),
-                          radial-gradient(ellipse 55% 50% at 80% 30%, rgba(255,215,80,0.10) 0%, transparent 55%),
-                          #fdf8ef;">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full mb-6"
-         style="background:rgba(255,184,48,0.30); border:1px solid rgba(255,184,48,0.50); color:#7a6100;">
-      <span class="w-2 h-2 rounded-full bg-amber-500 inline-block pulse-dot"></span>
-      Only a Few Spots Remaining
+<section class="py-16 sm:py-28 relative overflow-hidden grain" style="background:#102E3D;">
+  <div style="position:absolute;top:-80px;left:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(255,184,48,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-60px;right:-60px;width:350px;height:350px;background:radial-gradient(circle,rgba(255,184,48,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <div class="fade-up">
+      <div class="inline-flex items-center gap-2.5 text-xs font-bold px-5 py-2.5 rounded-full mb-8"
+           style="background:rgba(255,184,48,0.14); border:1px solid rgba(255,184,48,0.30); color:#FFD580; letter-spacing:0.1em;">
+        <span class="w-2 h-2 rounded-full inline-block pulse-dot" style="background:#FFB830;"></span>
+        Only a Few Spots Remaining This Week
+      </div>
+      <h2 class="font-display font-black text-white leading-[1.0] mb-6"
+          style="font-size:clamp(2.2rem,6vw,5rem); letter-spacing:-0.04em;">
+        Limited Spots.<br/>Every Week.
+      </h2>
+      <p class="text-base sm:text-xl leading-[1.8] mb-10 max-w-xl mx-auto" style="color:rgba(255,255,255,0.55);">
+        Deep cleans take time to do right. We only take on a handful of new homes each week — once they're gone, you wait for the next opening.
+      </p>
+      <a href="#contact" class="btn-primary text-base" style="padding:1.1rem 2.5rem; font-size:1.05rem;">
+        Reserve My Spot
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-    <h2 class="font-display font-black text-stone-900 tracking-tight leading-tight mb-6"
-        style="font-size:clamp(2rem,4.5vw,3rem);">
-      Limited Deep Clean Spots Each Week
-    </h2>
-    <p class="text-stone-600 text-lg leading-[1.8] max-w-2xl mx-auto mb-8">
-      Deep cleans take significantly longer than standard maintenance cleans. Because of this, we only accept a limited number of new homes each week. Once the schedule fills, this promotion closes until new availability opens.
-    </p>
-    <a href="#contact" class="btn-dark text-base">
-      Reserve My Spot
-      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
   </div>
 </section>
 
 <!-- ===== LEAD CAPTURE ===== -->
-<section id="contact" class="py-24 bg-white">
+<section id="contact" class="py-14 sm:py-24 bg-white">
   <div class="max-w-2xl mx-auto px-6">
     <div class="text-center mb-12 fade-up">
       <p class="font-semibold text-xs uppercase tracking-widest mb-4 text-stone-400">Get Started Today</p>
