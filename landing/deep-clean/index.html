@@ -399,11 +399,11 @@
   </a>
 </div>
 <script>
-(function() {
-  var bar     = document.getElementById('sticky-cta');
-  var form    = document.getElementById('contact');
+document.addEventListener('DOMContentLoaded', function() {
+  var bar  = document.getElementById('sticky-cta');
+  var form = document.getElementById('contact');
   if (!bar || !form) return;
-  var observer = new IntersectionObserver(function(entries) {
+  new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         bar.style.transform = 'translateY(100%)';
@@ -413,9 +413,8 @@
         bar.style.opacity   = '1';
       }
     });
-  }, { threshold: 0.1 });
-  observer.observe(form);
-})();
+  }, { threshold: 0.1 }).observe(form);
+});
 </script>
 
 <!-- ===== HERO ===== -->
