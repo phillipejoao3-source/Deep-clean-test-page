@@ -1035,27 +1035,27 @@
       <form style="background:#0D1F30; border:1px solid rgba(255,184,48,0.15); border-radius:16px; padding:2.5rem;" onsubmit="handleSubmit(event)">
         <div class="grid sm:grid-cols-2 gap-5 mb-5">
           <div>
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-input" placeholder="Your name" required />
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
           </div>
           <div>
             <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-input" placeholder="(770) 555-0100" required />
+            <input type="tel" name="phone" class="form-input" placeholder="(770) 555-0100" required autocomplete="tel" />
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-5 mb-5">
           <div>
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" placeholder="you@email.com" required />
+            <input type="email" name="email" class="form-input" placeholder="you@email.com" required autocomplete="email" />
           </div>
           <div>
             <label class="form-label">Zip Code</label>
-            <input type="text" class="form-input" placeholder="30060" maxlength="5" />
+            <input type="text" name="zip" class="form-input" placeholder="30060" maxlength="5" />
           </div>
         </div>
         <div class="mb-5">
           <label class="form-label">Home Size</label>
-          <select class="form-input" style="cursor:pointer;">
+          <select name="home_size" class="form-input" style="cursor:pointer;">
             <option value="" disabled selected style="color:rgba(246,248,255,0.35);">Select your home size</option>
             <option value="under1500">Under 1,500 sq ft</option>
             <option value="1500-2500">1,500 – 2,500 sq ft</option>
@@ -1066,16 +1066,16 @@
         </div>
         <div class="mb-5">
           <label class="form-label">What areas need the most attention?</label>
-          <textarea class="form-input" rows="3" placeholder="e.g., kitchen oven, bathrooms, behind appliances, baseboards..." style="resize:vertical;"></textarea>
+          <textarea name="notes" class="form-input" rows="3" placeholder="e.g., kitchen oven, bathrooms, behind appliances, baseboards..." style="resize:vertical;"></textarea>
         </div>
         <div class="mb-6">
           <label class="form-label">Preferred Timeframe</label>
-          <select class="form-input" style="cursor:pointer;">
+          <select name="timeframe" class="form-input" style="cursor:pointer;">
             <option value="" disabled selected>When do you need this done?</option>
-            <option>As soon as possible</option>
-            <option>Within 1–2 weeks</option>
-            <option>Within the next month</option>
-            <option>I'm flexible — just getting a quote</option>
+            <option value="asap">As soon as possible</option>
+            <option value="1-2weeks">Within 1–2 weeks</option>
+            <option value="this_month">Within the next month</option>
+            <option value="flexible">I'm flexible — just getting a quote</option>
           </select>
         </div>
         <button type="submit" class="btn-primary" style="width:100%; font-size:1.1rem; padding:1.2rem; border-radius:8px; text-align:center;">
