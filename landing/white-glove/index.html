@@ -1224,7 +1224,11 @@
         </div>
       </div>
       <div style="font-size:0.82rem; color:rgba(246,248,255,0.35);">"One call cleans it all" · Serving Atlanta & Marietta, GA</div>
-      <div style="font-size:0.8rem; color:rgba(246,248,255,0.25);">© 2025 Maid Ready Cleaning LLC. All rights reserved.</div>
+      <div style="font-size:0.8rem; color:rgba(246,248,255,0.25); display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+        <span>© 2025 Maid Ready Cleaning LLC. All rights reserved.</span>
+        <a href="https://maidreadycleaning.com/privacy-policy" style="color:rgba(246,248,255,0.35); text-decoration:none;">Privacy Policy</a>
+        <a href="https://maidreadycleaning.com/terms-of-service" style="color:rgba(246,248,255,0.35); text-decoration:none;">Terms of Service</a>
+      </div>
     </div>
   </footer>
 
@@ -1266,8 +1270,6 @@
       } catch(err) { /* fail silently */ }
       btn.textContent = 'Request Sent! We\'ll be in touch shortly.';
       btn.style.background = '#16a34a';
-      gtag('event', 'form_submitted', { page_type: 'white_glove' });
-      fbq('track', 'Lead', { content_name: 'white_glove_form' });
     }
 
     // Scroll fade-in for sections (optional enhancement)
