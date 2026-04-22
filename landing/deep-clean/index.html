@@ -323,7 +323,7 @@
     <!-- Right side: phone icon (mobile) + CTA (desktop) -->
     <div class="flex items-center gap-3">
       <!-- Phone icon — mobile only -->
-      <a href="tel:+17705550100" aria-label="Call us"
+      <a href="tel:+16787994669" aria-label="Call us"
          class="sm:hidden flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
          style="background:rgba(255,184,48,0.12); border:1px solid rgba(255,184,48,0.28);
                 transition: background 180ms ease, border-color 180ms ease;">
@@ -332,14 +332,14 @@
         </svg>
       </a>
       <!-- Desktop phone number -->
-      <a href="tel:+17705550100"
+      <a href="tel:+16787994669"
          class="hidden sm:inline-flex items-center gap-2 font-ui font-semibold text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
          style="color:rgba(255,255,255,0.80); transition: color 180ms ease;"
          onmouseover="this.style.color='#FFB830'" onmouseout="this.style.color='rgba(255,255,255,0.80)'">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.04 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
         </svg>
-        (770) 555-0100
+        (678) 799-4669
       </a>
       <!-- Desktop CTA -->
       <a href="#contact" class="hidden sm:inline-flex btn-primary text-sm" style="padding:0.65rem 1.4rem;">Claim Free Cleans</a>
@@ -1207,7 +1207,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style="background:rgba(0,0,0,0.55); color:rgba(255,255,255,0.75); letter-spacing:0.12em; backdrop-filter:blur(4px);">🍳 Kitchen</span>
           </div>
-          <div class="flex" style="height:300px;">
+          <div class="flex h-[300px] sm:h-[480px]">
             <!-- Before -->
             <div class="relative flex-1 overflow-hidden">
               <img src="IMG_5169.jpeg" alt="Kitchen before" class="w-full h-full object-cover" style="object-position:50% 30%;" />
@@ -1238,7 +1238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style="background:rgba(0,0,0,0.55); color:rgba(255,255,255,0.75); letter-spacing:0.12em; backdrop-filter:blur(4px);">🚿 Bathroom</span>
           </div>
-          <div class="flex" style="height:300px;">
+          <div class="flex h-[300px] sm:h-[480px]">
             <!-- Before -->
             <div class="relative flex-1 overflow-hidden">
               <img src="IMG_5174.jpeg" alt="Bathroom before" class="w-full h-full object-cover" style="object-position:50% 25%;" />
@@ -1370,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div>
               <label class="form-label-dc">Phone Number *</label>
-              <input type="tel" name="phone" required placeholder="(770) 555-0100" class="form-input" autocomplete="tel" />
+              <input type="tel" name="phone" required placeholder="(678) 799-4669" class="form-input" autocomplete="tel" />
             </div>
           </div>
 
@@ -1530,8 +1530,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style="border-color:rgba(255,255,255,0.07);">
       <p>&copy; 2026 Maid Ready Cleaning. All rights reserved.</p>
       <div class="flex gap-4">
-        <a href="privacy-policy.html" class="hover:text-brand-400 transition-colors focus-visible:text-brand-400">Privacy Policy</a>
-        <a href="terms-of-service.html" class="hover:text-brand-400 transition-colors">Terms of Service</a>
+        <a href="https://maidreadycleaning.com/privacy-policy" class="hover:text-brand-400 transition-colors focus-visible:text-brand-400">Privacy Policy</a>
+        <a href="https://maidreadycleaning.com/terms-of-service" class="hover:text-brand-400 transition-colors">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -1550,13 +1550,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.fade-up').forEach((el, i) => {
     if (i < 2) setTimeout(() => el.classList.add('visible'), i * 180);
   });
-
-  // Form submit
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('lead-form').style.display = 'none';
-    document.getElementById('success-msg').classList.remove('hidden');
-  }
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1583,18 +1576,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="tel:"]').forEach(a => {
     a.addEventListener('click', () => track('phone_click'));
   });
-
-  // Form start — fires once when user first clicks into the GHL iframe
-  let formStartFired = false;
-  const formIframe = document.getElementById('inline-VenHYQiYId7d7z9hgwQy');
-  if (formIframe) {
-    window.addEventListener('blur', () => {
-      if (!formStartFired && document.activeElement === formIframe) {
-        formStartFired = true;
-        track('form_start');
-      }
-    });
-  }
 
   // Form submit — GHL fires a postMessage on successful submission
   window.addEventListener('message', (e) => {
