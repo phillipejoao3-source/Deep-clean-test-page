@@ -77,6 +77,15 @@
     }
     .nav-logo { display: flex; align-items: center; gap: 10px; }
     .nav-logo img { height: 30px; width: auto; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-phone {
+      display: none;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+      color: rgba(255,255,255,0.75); text-decoration: none; letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-phone:hover { color: #fff; }
+    @media (min-width: 600px) { .nav-phone { display: inline; } }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--gold); color: var(--dark);
@@ -781,7 +790,10 @@
   <div class="nav-logo">
     <img src="LOGO.png" alt="Maid Ready" />
   </div>
-  <a href="#" class="nav-cta" onclick="openModal(event)">Claim Launch Offer</a>
+  <div class="nav-right">
+    <a href="tel:+16787994669" class="nav-phone">(678) 799-4669</a>
+    <a href="#" class="nav-cta" onclick="openModal(event)">Claim Launch Offer</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1203,8 +1215,8 @@
     <span class="footer-copy">© 2025 Maid Ready Cleaning LLC. Atlanta, GA. All rights reserved.</span>
   </div>
   <div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="https://maidreadycleaning.com/privacy-policy">Privacy Policy</a>
+    <a href="https://maidreadycleaning.com/terms-of-service">Terms of Service</a>
   </div>
 </footer>
 
@@ -1270,8 +1282,6 @@
     btn.textContent = "Submitted! We'll be in touch soon.";
     btn.style.background = 'rgba(126,202,219,0.15)';
     btn.style.color = 'var(--teal)';
-    gtag('event', 'form_submitted', { page_type: 'str_offer' });
-    fbq('track', 'Lead', { content_name: 'str_form' });
   }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
