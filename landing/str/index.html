@@ -276,7 +276,11 @@
       color: var(--text); margin-bottom: 20px;
     }
     h1.hero-h1 em { font-style: normal; color: var(--teal); }
-    .hero-sub { font-size: clamp(15px,1.8vw,17px); color: var(--text-2); line-height: 1.72; max-width: 510px; margin-bottom: 34px; }
+    .hero-sub { font-size: clamp(15px,1.8vw,17px); color: var(--text-2); line-height: 1.72; max-width: 510px; margin-bottom: 20px; }
+    .hero-vals { display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+    .hero-val { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2); font-weight: 500; }
+    .hero-val-check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: rgba(74,222,128,0.13); border: 1px solid rgba(74,222,128,0.28); display: flex; align-items: center; justify-content: center; }
+    .hero-val-check svg { width: 9px; height: 9px; stroke: #4ade80; stroke-width: 2.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 38px; }
     .hero-trust {
       display: inline-flex; align-items: flex-start; gap: 10px; max-width: 470px;
@@ -837,7 +841,13 @@
         STR &amp; Airbnb Turnovers · Atlanta, GA
       </div>
       <h1 class="hero-h1">Atlanta's Most<br><em>Dependable</em><br>Turnover Team.</h1>
-      <p class="hero-sub">Maid Ready helps Atlanta-area hosts and operators run cleaner, tighter, more dependable turnovers — faster communication, stronger execution, and a new partner program built to make testing us low-risk.</p>
+      <p class="hero-sub">Atlanta-area hosts and operators trust Maid Ready to run tighter, more dependable turnovers — every time.</p>
+      <div class="hero-vals">
+        <div class="hero-val"><div class="hero-val-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div><span>Same-day communication on every turnover</span></div>
+        <div class="hero-val"><div class="hero-val-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div><span>Guest-ready results — not just "clean"</span></div>
+        <div class="hero-val"><div class="hero-val-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div><span>Proactive issue reporting after every clean</span></div>
+        <div class="hero-val"><div class="hero-val-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></div><span>Scales from single units to full portfolios</span></div>
+      </div>
       <div class="hero-ctas">
         <a href="#" class="btn-primary hero-cta-desktop" onclick="openModal(event)">
           Put Us to the Test
@@ -908,6 +918,67 @@
     </div>
   </div>
 </section>
+
+<!-- REVIEW CAROUSEL -->
+<section style="background:var(--bg); padding:1.5rem 0 0; overflow:hidden; position:relative;">
+  <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:16px;">
+    <span style="color:var(--gold); font-size:0.88rem; letter-spacing:0.04em;">★★★★★</span>
+    <span style="color:var(--text-3); font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; font-family:var(--font-head);">Real Google Reviews</span>
+  </div>
+  <div id="str-rev-wrap" style="position:relative;">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none;"></div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to left,var(--bg),transparent);pointer-events:none;"></div>
+    <div id="str-rev-marquee" style="display:flex;gap:12px;width:max-content;will-change:transform;padding-bottom:2rem;"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes str-rev-scroll { from { transform:translateX(0); } to { transform:translateX(var(--str-rev-offset)); } }
+  #str-rev-marquee { animation: str-rev-scroll 55s linear infinite; }
+  #str-rev-marquee.paused { animation-play-state: paused; }
+  .str-rev-tile {
+    flex-shrink: 0; width: 260px;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 14px 16px; cursor: default;
+    transition: background 200ms ease, border-color 200ms ease;
+  }
+  .str-rev-tile:hover { background: rgba(255,255,255,0.08); border-color: rgba(126,202,219,0.25); }
+</style>
+
+<script>
+(function() {
+  const reviews = [
+    { initials:'MS', name:'Marie St Jean',       text:'"Phenomenal! Every visit leaves my home absolutely spotless. I\'ve been a customer for almost two years."' },
+    { initials:'SC', name:'Sharon Crumpler',     text:'"They\'ve accommodated my ever-changing schedule for years. I always love coming home to a freshly cleaned house!"' },
+    { initials:'TC', name:'T&W Casper',          text:'"We\'ve used them for our Airbnb properties for years — accommodating, reliable, and always consistent."' },
+    { initials:'GS', name:'Geana Silva',         text:'"This company gave my home a whole new look. I felt such peace when I saw it. Professional and trustworthy."' },
+    { initials:'MR', name:'Maria Eduarda Rossi', text:'"Impeccable service! Responsible, detailed, and highly recommendable."' },
+    { initials:'MF', name:'Mari Faustino',       text:'"Professionalism, punctuality, and quality in every visit. Couldn\'t ask for more."' },
+  ];
+  const marquee = document.getElementById('str-rev-marquee');
+  function buildCard(r) {
+    const el = document.createElement('div');
+    el.className = 'str-rev-tile';
+    el.innerHTML = `
+      <div style="color:#FFB830;font-size:0.78rem;margin-bottom:8px;letter-spacing:0.04em;">★★★★★</div>
+      <p style="color:rgba(237,241,255,0.78);font-size:0.82rem;line-height:1.65;margin-bottom:10px;font-family:var(--font-body);">${r.text}</p>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:rgba(126,202,219,0.12);border:1px solid rgba(126,202,219,0.25);display:flex;align-items:center;justify-content:center;font-size:0.6rem;font-weight:700;color:#7ECADB;flex-shrink:0;">${r.initials}</div>
+        <span style="color:var(--text-3);font-size:0.72rem;font-weight:600;font-family:var(--font-head);">${r.name}</span>
+      </div>`;
+    return el;
+  }
+  [...reviews, ...reviews].forEach(r => marquee.appendChild(buildCard(r)));
+  requestAnimationFrame(() => {
+    marquee.style.setProperty('--str-rev-offset', `-${marquee.scrollWidth / 2}px`);
+  });
+  const wrap = document.getElementById('str-rev-wrap');
+  wrap.addEventListener('mouseenter', () => marquee.classList.add('paused'));
+  wrap.addEventListener('mouseleave', () => marquee.classList.remove('paused'));
+  wrap.addEventListener('touchstart', () => marquee.classList.add('paused'), { passive:true });
+  wrap.addEventListener('touchend',   () => marquee.classList.remove('paused'), { passive:true });
+})();
+</script>
 
 <!-- CAPABILITY BAR -->
 <div id="cap-bar">
