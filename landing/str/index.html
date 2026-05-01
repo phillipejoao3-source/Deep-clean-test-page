@@ -279,8 +279,8 @@
     .hero-sub { font-size: clamp(15px,1.8vw,17px); color: var(--text-2); line-height: 1.72; max-width: 510px; margin-bottom: 20px; }
     .hero-vals { display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
     .hero-val { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2); font-weight: 500; }
-    .hero-val-check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: rgba(74,222,128,0.13); border: 1px solid rgba(74,222,128,0.28); display: flex; align-items: center; justify-content: center; }
-    .hero-val-check svg { width: 9px; height: 9px; stroke: #4ade80; stroke-width: 2.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .hero-val-check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: #FFB830; display: flex; align-items: center; justify-content: center; }
+    .hero-val-check svg { width: 9px; height: 9px; stroke: #07090F; stroke-width: 2.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 38px; }
     .hero-trust {
       display: inline-flex; align-items: flex-start; gap: 10px; max-width: 470px;
@@ -389,15 +389,21 @@
     }
 
     @media (max-width: 768px) {
-      .hero-left { text-align: center; display: flex; flex-direction: column; align-items: center; }
-      .hero-pill { align-self: center; }
-      h1.hero-h1 { font-size: clamp(44px,12vw,60px); }
-      .hero-sub { font-size: 14px; max-width: 100%; }
-      .hero-ctas { justify-content: center; }
+      .hero-left { text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
+      .hero-pill { align-self: flex-start; }
+      h1.hero-h1 { font-size: clamp(40px,11vw,56px); }
+      .hero-sub { font-size: 14px; max-width: 100%; margin-bottom: 16px; }
+      .hero-vals { gap: 8px; margin-bottom: 22px; }
+      .hero-val { font-size: 13px; }
+      .hero-ctas { justify-content: flex-start; margin-bottom: 24px; }
       .hero-cta-desktop { display: none; }
-      .hero-trust { max-width: 100%; text-align: left; }
+      .hero-trust { max-width: 100%; font-size: 12px; padding: 10px 13px; }
+      .hero-trust-text { font-size: 12px; }
       .offer-panel { width: 100%; max-width: 100%; }
       .op-title { text-shadow: none; }
+      .op-value { padding: 20px 16px 16px; }
+      .op-num { font-size: 36px; }
+      .op-num.invest { font-size: 26px; }
     }
 
     /* ── CAP BAR ── */
@@ -926,8 +932,6 @@
     <span style="color:var(--text-3); font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; font-family:var(--font-head);">Real Google Reviews</span>
   </div>
   <div id="str-rev-wrap" style="position:relative;">
-    <div style="position:absolute;left:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none;"></div>
-    <div style="position:absolute;right:0;top:0;bottom:0;width:80px;z-index:2;background:linear-gradient(to left,var(--bg),transparent);pointer-events:none;"></div>
     <div id="str-rev-marquee" style="display:flex;gap:12px;width:max-content;will-change:transform;padding-bottom:2rem;"></div>
   </div>
 </section>
